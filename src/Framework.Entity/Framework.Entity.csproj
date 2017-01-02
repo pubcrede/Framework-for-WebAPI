@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9C5DD3C-2E90-4160-8C7D-0B478E820170}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.Entity</RootNamespace>
+    <AssemblyName>Framework.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>6002</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Extensions.Full, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Extensions.Full.3.0.12-rc2\lib\net46\Genesys.Extensions.Full.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Extensions.Universal, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Extensions.Full.3.0.12-rc2\lib\net46\Genesys.Extensions.Universal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Extras.Full, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Extensions.Full.3.0.12-rc2\lib\net46\Genesys.Extras.Full.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Extras.Universal, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Extensions.Full.3.0.12-rc2\lib\net46\Genesys.Extras.Universal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Foundation.Entity, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Foundation.Entity.3.0.12-rc2\lib\net46\Genesys.Foundation.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Foundation.Interfaces, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Foundation.Interfaces.3.0.12-rc2\lib\net46\Genesys.Foundation.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerInfo.cs">
+      <DependentUpon>FrameworkEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerType.cs">
+      <DependentUpon>FrameworkEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CustomerType.cs" />
+    <Compile Include="Entity\CustomerInfo.cs" />
+    <Compile Include="FrameworkEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrameworkEntity.Context.tt</DependentUpon>
+    </Compile>
+    <None Include="FrameworkEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrameworkEntity.tt</DependentUpon>
+    </None>
+    <Compile Include="FrameworkEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrameworkEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EFPartial.ps1" />
+    <EntityDeploy Include="FrameworkEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FrameworkEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FrameworkEntity.edmx.diagram">
+      <DependentUpon>FrameworkEntity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PostBuild.bat" />
+    <None Include="PreBuild.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FrameworkEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FrameworkEntity.edmx</DependentUpon>
+      <LastGenOutput>FrameworkEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FrameworkEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FrameworkEntity.edmx</DependentUpon>
+      <LastGenOutput>FrameworkEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Interfaces\Framework.Interfaces.csproj">
+      <Project>{0ac46ec9-ec99-4bfa-8da9-4d9e0e9cb039}</Project>
+      <Name>Framework.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Call "$(ProjectDir)PostBuild.Bat" "$(TargetDir)" "$(TargetName)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>Call "$(ProjectDir)PreBuild.Bat" "$(ProjectDir)"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

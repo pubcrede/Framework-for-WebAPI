@@ -1,0 +1,62 @@
+﻿<Page x:Class="Framework.Pages.MainWindow"
+    xmlns:t="clr-namespace:Framework.Themes"
+    xmlns:p="clr-namespace:Framework.UserControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"	
+    Title="MainWindow">
+
+    <t:GenericLayout>
+        <t:GenericLayout.Title>
+            Welcome to your WPF App!
+        </t:GenericLayout.Title>
+        <t:GenericLayout.ContentBody>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Vertical" Background="{StaticResource ContentBackgroundBrush}">
+                    <TextBox Style="{StaticResource TextBoxSubTitle}" Margin="5,10,0,10">
+                        Your new WPF Desktop App + Reusable Framework powered by the Genesys Framework is ready!
+                    </TextBox>
+                    <TextBox Style="{StaticResource TextBoxSubTitle}" Margin="20,0,0,0">Step 1: Publish the Framework.Database (SSDT) project to your SQL Server by:</TextBox>
+                    <StackPanel Margin="38,0,0,0">
+                        <TextBox Style="{StaticResource TextBoxBody}">I. Double-click Framework.Database\Publish\PublishToDev.publish.xml to bring up the Publish form</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}">II. Set your SQL connection by clicking the Edit button</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}">III. Click Publish and SSDT will publish schema, SPs, views and data to your destination database</TextBox>
+                    </StackPanel>
+                    <TextBox Style="{StaticResource TextBoxSubTitle}" Margin="20,0,0,0">Step 2: Set the Framework.Entity (EF) connection strings to your SQL Server by:</TextBox>
+                    <StackPanel Orientation="Vertical" Margin="38,0,0,0">
+                        <TextBox Style="{StaticResource TextBoxBody}">I. Open Framework.DesktopApp\Local\ConnectionStrings.config</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}">II. Change DatabaseServer.dev.getframework.local to your SQL Server machine name</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}">III. For SQL Authentication, change "Integrated Security=true" to "user id=USER; password=PASS;"</TextBox>
+                    </StackPanel>
+                    <TextBox Style="{StaticResource TextBoxSubTitle}" Margin="20,0,0,0">Step 3: Run the Framework.DesktopApp project!</TextBox>
+                    <StackPanel Margin="38,0,0,10">
+                        <TextBox Style="{StaticResource TextBoxBody}">I. Right-cick the Framework.DesktopApp project and select Set as Startup Project</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}">II. Press F5 to run</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}">III. Click the Search link at the top, enter "i" for First Name, and click Search to see records with "i"</TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Background="{StaticResource ContentBackgroundBrush}" Orientation="Vertical" Margin="0,10,5,0" Grid.Column="0">
+                        <TextBox Style="{StaticResource TextBoxSubTitle}" Margin="5,0,0,0">What is the Genesys Framework?</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}" Margin="10,5,0,0" HorizontalAlignment="Left" MaxWidth="330" TextWrapping="Wrap">
+                            Genesys Framework helps you create a reusable framework for your business entity objects and view-model objects ...allowing your framework objects to work in MVC, WebAPI and Cross-Platform Universal Apps.
+                        </TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}" Margin="10,5,0,10" HorizontalAlignment="Left" MaxWidth="330" TextWrapping="Wrap">
+                            Works with your existing .Net applications and SQL Server databases, allowing you to incrementally upgrade one object, one page at a time.
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Background="{StaticResource ContentBackgroundBrush}" Orientation="Vertical" Margin="0,10,5,0" Grid.Column="1">
+                        <TextBox Style="{StaticResource TextBoxSubTitle}" Margin="5,5,0,0">Other areas of interest:</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}" Margin="10,3,0,0">Genesys Framework Home: http://www.GetFramework.com</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}" Margin="10,3,0,0">Genesys Framework Docs: http://docs.getframework.com</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}" Margin="10,3,0,0">Genesys in Visual Studio: http://marketplace.visualstudio.com</TextBox>
+                        <TextBox Style="{StaticResource TextBoxBody}" Margin="10,3,0,0">Genesys on GitHub: http://github.com/GenesysSource</TextBox>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </t:GenericLayout.ContentBody>
+    </t:GenericLayout>
+</Page>

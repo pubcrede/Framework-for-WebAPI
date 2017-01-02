@@ -1,0 +1,53 @@
+﻿@using Framework.WebApp
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesys Framework Quick-Start for MVC</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scriptsHead", required: false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top genesys-nav-bar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Genesys Framework Quick-Start for MVC", HomeController.IndexGetAction, HomeController.ControllerName, new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink(CustomerSearchController.SearchAction, CustomerSearchController.SearchAction, CustomerSearchController.ControllerName)</li>
+                    <li>@Html.ActionLink(CustomerController.CreateAction, CustomerController.CreateAction, CustomerController.ControllerName)</li>
+                    <li><a href="http://docs.getframework.com" target="_blank">Docs</a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+     </div>
+    <footer>
+        <hr />
+        <div class="col-sm-offset-1 col-sm-6 genesys-text-right">            
+            <a href="http://docs.getframework.com" target="_blank">Reference Docs</a>
+            | <a href="http://www.getframework.com/contactus" target="_blank">Contact Us</a>
+            | <a href="http://www.getframework.com/boards/forum/5/issues-and-solutions" target="_blank">Report a Problem</a>
+        </div>
+        <div class="col-sm-4 genesys-text-right">
+            <p>@(String.Format("Copyright (c) {0} {1}. All rights reserved.", DateTime.UtcNow.Year, "Genesys Source"))</p>
+        </div>        
+    </footer>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

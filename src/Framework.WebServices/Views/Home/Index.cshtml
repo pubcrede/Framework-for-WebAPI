@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Your Web API web service powered by Genesys Framework";
+}
+
+<div class="jumbotron">
+    <h2>Welcome to your Web API web service!</h2>
+    <p class="lead">Your new Web API web service + Reusable Framework powered by the Genesys Framework is ready!</p>
+    <blockquote>
+        <table>
+            <tr>
+                <td style="width:8%;vertical-align:top;"><strong>Step 1:</strong></td>
+                <td>
+                    Publish the Framework.Database (SSDT) project to your SQL Server by:
+                    <ul>
+                        <li>Double-click Framework.Database\Publish\<strong>PublishToDev.publish.xml</strong> to bring up the Publish form</li>
+                        <li>Set your SQL connection by clicking the <strong>Edit</strong> button</li>
+                        <li>Click <strong>Publish</strong> and SSDT will publish schema, SPs, views and data to your destination database</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:8%;vertical-align:top;"><strong>Step 2:</strong></td>
+                <td>
+                    Set the Framework.Entity (EF) connection strings to your SQL Server by:
+                    <ul>
+                        <li>Open Framework.WebServices\Local\<strong>ConnectionStrings.config</strong></li>
+                        <li>Change DatabaseServer.dev.getframework.local to your SQL Server machine name</li>
+                        <li>For SQL Authentication, change "Integrated Security=true" to "user id=USER; password=PASS;"</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:8%;vertical-align:top;"><strong>Step 3: </strong></td>
+                <td>
+                    Run the Framework.WebServices project!
+                    <ul>
+                        <li>Right-cick the <strong>Framework.WebServices</strong> project and select <strong>Set as Startup Project</strong></li>
+                        <li>Press <strong>F5</strong> to run</li>
+                        <li>Type the following path to display customer 18 data: <strong>/v1/customer/18</strong></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </blockquote>
+    <p><a href="http://www.getframework.com" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>What is the Genesys Framework?</h2>
+        <p>Genesys Framework helps you create a reusable framework for your business entity objects and view-model objects ...allowing your framework objects to work in MVC, WebAPI and Cross-Platform Universal Apps.</p>
+        <p>Works with your existing .Net applications and SQL Server databases...and allows you to incrementally build your reusable framework one object, one page at a time.</p>
+        <br />
+        <p><a class="btn btn-default" href="http://www.getframework.com">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-offset-1 col-md-5">
+        <h2>Other areas of interest:</h2>
+        <ul>
+            <li>Visit the Genesys Framework at: <a href="http://www.getframework.com">http://www.GetFramework.com</a></li>
+            <li>Genesys Framework Docs: <a href="http://docs.getframework.com/reference/Genesys-Framework-Foundation">http://docs.getframework.com</a></li>
+            <li>Genesys Framework <a href="http://www.github.com/GenesysSource/Extensions">Extensions on GitHub</a></li>
+            <li>Genesys Framework <a href="http://www.github.com/GenesysSource/Foundation">Foundation on GitHub</a></li>
+        </ul>
+        <br />
+        <p><a class="btn btn-default" href="http://www.getframework.com">Learn more &raquo;</a></p>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73611822-03EB-4D3B-9564-638DCAD89938}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework.Test</RootNamespace>
+    <AssemblyName>Framework.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Extensions.Full, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Extensions.Full.3.0.12-rc2\lib\net46\Genesys.Extensions.Full.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Extensions.Universal, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Extensions.Full.3.0.12-rc2\lib\net46\Genesys.Extensions.Universal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Extras.Full, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Extensions.Full.3.0.12-rc2\lib\net46\Genesys.Extras.Full.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Extras.Universal, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Extensions.Full.3.0.12-rc2\lib\net46\Genesys.Extras.Universal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Foundation.Entity, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Foundation.Entity.3.0.12-rc2\lib\net46\Genesys.Foundation.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Foundation.Interfaces, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Foundation.Interfaces.3.0.12-rc2\lib\net46\Genesys.Foundation.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Genesys.Foundation.Models, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Genesys.Foundation.Models.3.0.12-rc2\lib\net46\Genesys.Foundation.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="CustomerCloudTests.cs" />
+    <Compile Include="CustomerEntityTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Local\AppSettings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Local\ConnectionStrings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Entity\Framework.Entity.csproj">
+      <Project>{a9c5dd3c-2e90-4160-8c7d-0b478e820170}</Project>
+      <Name>Framework.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Interfaces\Framework.Interfaces.csproj">
+      <Project>{0ac46ec9-ec99-4bfa-8da9-4d9e0e9cb039}</Project>
+      <Name>Framework.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework.Models\Framework.Models.csproj">
+      <Project>{d99dbea0-7e81-4557-ba85-eedeb8bba2bd}</Project>
+      <Name>Framework.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

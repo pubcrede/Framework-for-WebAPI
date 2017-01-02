@@ -1,0 +1,19 @@
+﻿ <p:ReadOnlyControl
+    x:Class="Framework.UserControls.ProgressProcessingRing"
+    xmlns:p="clr-namespace:Framework.UserControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Vertical" Margin="0,5,0,0">
+        <StackPanel Orientation="Horizontal">
+            <p:ProgressRingControl x:Name="ProgressRingIndeterminate"/>
+            <TextBlock x:Name="TextProgressMessage" TextWrapping="Wrap" Style="{StaticResource ProgressMessageStyle}" />
+        </StackPanel>
+        <TextBlock x:Name="TextCancelMessage" Visibility="Collapsed" TextWrapping="Wrap" Style="{StaticResource ErrorMessageStyle}" />
+        <TextBlock x:Name="TextErrorMessage" Visibility="Collapsed" TextWrapping="Wrap" Style="{StaticResource ErrorMessageStyle}" />
+        <TextBlock x:Name="TextSuccessMessage" Visibility="Collapsed" TextWrapping="Wrap" Style="{StaticResource SuccessMessageStyle}" />
+    </StackPanel>
+</p:ReadOnlyControl>
