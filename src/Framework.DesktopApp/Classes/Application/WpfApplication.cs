@@ -25,7 +25,7 @@ using Genesys.Extensions;
 using Genesys.Extras.Configuration;
 using Genesys.Extras.Net;
 
-namespace Framework.Application
+namespace Framework.Applications
 {
     /// <summary>
     /// Global application information

@@ -90,7 +90,6 @@ namespace Framework.Pages
         protected override async void Page_ModelReceived(object sender, NewModelReceivedEventArgs e)
         {
             this.OkCancel.StartProcessing("Loading data...");
-            if (e.NewModelData != null) e.NewModelData = TypeExtension.DefaultInteger;
             CustomerModel model = await MyViewModel.GetByID(e.NewModelData.ToString().TryParseInt32());
             BindModel(model);
             this.OkCancel.CancelProcessing();
@@ -104,11 +103,11 @@ namespace Framework.Pages
         {
             MyViewModel.Model = modelData.DirectCastSafe<CustomerModel>();
             DataContext = MyViewModel.Model;
-            BindControl(ref this.TextID, MyViewModel.Model.ID.ToString(), "ID");
-            BindControl(ref this.TextKey, MyViewModel.Model.Key.ToString(), "Key");
-            BindControl(ref this.TextFirstName, MyViewModel.Model.FirstName, "FirstName");
-            BindControl(ref this.TextLastName, MyViewModel.Model.LastName, "LastName");
-            BindControl(ref this.TextBirthDate, MyViewModel.Model.BirthDate.ToString(), "BirthDate");
+            SetBinding(ref this.TextID, MyViewModel.Model.ID.ToString(), "ID");
+            SetBinding(ref this.TextKey, MyViewModel.Model.Key.ToString(), "Key");
+            SetBinding(ref this.TextFirstName, MyViewModel.Model.FirstName, "FirstName");
+            SetBinding(ref this.TextLastName, MyViewModel.Model.LastName, "LastName");
+            SetBinding(ref this.TextBirthDate, MyViewModel.Model.BirthDate.ToString(), "BirthDate");
             this.TextGender.Text = MyViewModel.Model.GenderSelections().Find(x => x.Key == MyViewModel.Model.GenderID).Value;
         }
 
@@ -127,11 +126,10 @@ namespace Framework.Pages
         /// </summary>
         public override async Task<ProcessResult> Process(object sender, RoutedEventArgs e)
         {
-
             var returnValue = new ProcessResult();
 
             MyViewModel.Model = await MyViewModel.Delete(MyViewModel.Model.ID);
-            DataContext = MyViewModel.Model;
+            BindModel(MyViewModel.Model);
             if (MyViewModel.Model.ID == TypeExtension.DefaultInteger)
             {
                 returnValue.FailedRules.Add("1026", "Failed to delete");

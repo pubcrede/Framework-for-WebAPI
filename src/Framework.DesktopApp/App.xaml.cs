@@ -18,7 +18,7 @@
 //-----------------------------------------------------------------------
 using System;
 using System.Threading.Tasks;
-using Framework.Application;
+using Framework.Applications;
 
 namespace Framework.DesktopApp
 {

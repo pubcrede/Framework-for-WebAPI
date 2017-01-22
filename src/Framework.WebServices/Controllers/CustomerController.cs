@@ -101,10 +101,9 @@ namespace Framework.WebServices
             CustomerModel model = new CustomerModel();
 
             customer = CustomerInfo.GetByID(id.TryParseInt32());
-            if (customer.ID != TypeExtension.DefaultInteger)
-            {
-                model.Fill(customer); // Go back to model for transport
-            }
+            customer.Delete();
+            customer = CustomerInfo.GetByID(id.TryParseInt32()); // Verify delete, success returns empty object
+            model.Fill(customer);
 
             return model;
         }

@@ -101,9 +101,9 @@ namespace Framework.Pages
         {
             MyViewModel.Model = modelData.DirectCastSafe<CustomerSearchModel>();
             DataContext = MyViewModel.Model;
-            //BindControl(ref this.TextID, MyViewModel.Model.ID.ToString(), "ID");
-            BindControl(ref this.TextFirstName, MyViewModel.Model.FirstName, "FirstName");
-            BindControl(ref this.TextLastName, MyViewModel.Model.LastName, "LastName");
+            //SetBinding(ref this.TextID, MyViewModel.Model.ID.ToString(), "ID");
+            SetBinding(ref this.TextFirstName, MyViewModel.Model.FirstName, "FirstName");
+            SetBinding(ref this.TextLastName, MyViewModel.Model.LastName, "LastName");
         }
 
         /// <summary>
@@ -129,11 +129,11 @@ namespace Framework.Pages
             this.ListResults.ItemsSource = MyViewModel.Model.Results;
             if (this.MyViewModel.Model.Results.Count > 0)
             {
-                OkCancel.TextSuccessful = "Customer matches listed below";
+                OkCancel.TextResultMessage = "Customer matches listed below";
                 this.StackResults.Visibility = Visibility.Visible;
             } else
             {
-                OkCancel.TextSuccessful = "No results found";
+                OkCancel.TextResultMessage = "No results found";
                 this.StackResults.Visibility = Visibility.Collapsed;
             }
             returnValue.ReturnData = this.MyViewModel.Model.Serialize();

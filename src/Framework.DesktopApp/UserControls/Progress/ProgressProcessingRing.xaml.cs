@@ -29,236 +29,164 @@ namespace Framework.UserControls
     /// </summary>
     public sealed partial class ProgressProcessingRing : ReadOnlyControl
     {
-        /// <summary>
-        /// Mode of this control, should only show error or processing at once
-        /// </summary>
-        private enum Modes
-        {
-            Processing = 1,
-            Errored = 2,
-            Hidden = 3,
-            Success = 4
-        }
-        
+        private string processingMessageBackup = TypeExtension.DefaultString;
+        private string successMessageBackup = TypeExtension.DefaultString;
+
         /// <summary>
         /// Wraps text next to progress
         /// </summary>
         /// <value></value>
         /// <returns></returns>
-        public string TextProgress
+        public string TextProcessingMessage
         {
             get
             {
-                return TextProgressMessage.Text;
+                return TextProcessing.Text;
             }
             set
             {
-                TextProgressMessage.Text = value;
+                TextProcessing.Text = value;
             }
         }
-       
+
         /// <summary>
         /// Wraps text next to success
         /// </summary>
         /// <value></value>
         /// <returns></returns>
-        public string TextSuccess
+        public string TextResultMessage
         {
             get
             {
-                return TextSuccessMessage.Text;
+                return TextResult.Text;
             }
             set
             {
-                if (value != TypeExtension.DefaultString)
-                {
-                    TextSuccessMessage.Text = value;
-                    Mode = Modes.Success;
-                }
-                else
-                {
-                    Visibility = System.Windows.Visibility.Collapsed;
-                }
+                TextResult.Text = value;
             }
         }
-
-        /// <summary>
-        /// Wraps text next to error
-        /// </summary>
-        /// <value></value>
-        /// <returns></returns>
-        public string TextError
-        {
-            get
-            {
-                return TextErrorMessage.Text;
-            }
-            set
-            {
-                if (value != TypeExtension.DefaultString)
-                {
-                    TextErrorMessage.Text = value;
-                    Mode = Modes.Errored;
-                } else
-                {
-                    Visibility = System.Windows.Visibility.Collapsed;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Wraps text next to error
-        /// </summary>
-        /// <value></value>
-        /// <returns></returns>
-        public string TextCancel
-        {
-            get
-            {
-                return TextCancelMessage.Text;
-            }
-            set
-            {
-                if (value != TypeExtension.DefaultString)
-                {
-                    TextCancelMessage.Text = value;
-                    Mode = Modes.Errored;
-                } else
-                {
-                    Visibility = System.Windows.Visibility.Collapsed;
-                }
-            }
-        }
-
 
         /// <summary>
         /// Handle visibility for all child controls
         /// </summary>
         /// <value></value>
         /// <returns></returns>
-        public new System.Windows.Visibility Visibility
+        public new Visibility Visibility
         {
             get
             {
-                return ProgressRingIndeterminate.Visibility;
+                return PanelRoot.Visibility;
             }
             set
             {
-                if (value == System.Windows.Visibility.Collapsed)
-                {
-                    Mode = Modes.Hidden;
-                }
-                else
-                {
-                    Mode = Modes.Processing;
-                }
+                PanelRoot.Visibility = value;
             }
         }
 
-        private Modes mode = Modes.Processing;
-
-        /// <summary>
-        /// Handles for errors vs. processing. Default is processing, yet hidden
-        /// </summary>
-        /// <value></value>
-        /// <returns></returns>
-        private Modes Mode
-        {
-            get
-            {
-                return mode;
-            }
-            set
-            {
-                ProgressRingIndeterminate.Visibility = System.Windows.Visibility.Collapsed;
-                TextProgressMessage.Visibility = System.Windows.Visibility.Collapsed;
-                TextSuccessMessage.Visibility = System.Windows.Visibility.Collapsed;
-                TextErrorMessage.Visibility = System.Windows.Visibility.Collapsed;
-                switch (value)
-                {
-                    case Modes.Processing:
-                        ProgressRingIndeterminate.Visibility = System.Windows.Visibility.Visible;
-                        TextProgressMessage.Visibility = System.Windows.Visibility.Visible;
-                        break;
-                    case Modes.Errored:
-                        TextErrorMessage.Visibility = System.Windows.Visibility.Visible;
-                        break;
-                    case Modes.Success:
-                        TextSuccessMessage.Visibility = System.Windows.Visibility.Visible;
-                        break;
-                }
-            }
-        }
-        
         /// <summary>
         /// Constructor
         /// </summary>
         public ProgressProcessingRing()
         {
             InitializeComponent();
+            Loaded += ProgressProcessingControl_Loaded;
         }
 
         /// <summary>
         /// Binds controls to the data 
         /// </summary>
-        /// <typeparam name="TModel"></typeparam>
-        /// <param name="modelData"></param>
+        /// <typeparam name="TModel">Model of this page</typeparam>
+        /// <param name="modelData">Data to bind to page</param>
         protected override void BindModelData(object modelData)
         {
         }
 
         /// <summary>
-        /// Partial and controls have been loaded
+        /// Hide the control if this page is navigated to again
         /// </summary>
-        /// <param name="sender">Sender of this event call</param>
-        /// <param name="e">Event arguments</param>
-        protected override void Partial_Loaded(object sender, EventArgs e)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProgressProcessingControl_Loaded(object sender, RoutedEventArgs e)
         {
-            Mode = Modes.Errored;
-            base.Partial_Loaded(sender, e);
         }
-       
+
         /// <summary>
-        /// Starts the processing
+        /// Starts the processing with pre-set processing message
         /// </summary>
-        public void StartProcessing(string processingMessage = "")
+        /// <param name="processingMessage">Message to show while processing</param>
+        public void StartProcessing(string processingMessage)
         {
-            if (processingMessage != TypeExtension.DefaultString)
-            {
-                TextProgress = processingMessage;
-            }
-            Visibility = System.Windows.Visibility.Visible;
+            processingMessageBackup = TextProcessing.Text;
+            TextProcessing.Text = processingMessage;
+            StartProcessing();
+        }
+
+        /// <summary>
+        /// Starts the processing with pre-set processing message
+        /// </summary>
+        public void StartProcessing()
+        {
+            PanelRoot.Visibility = Visibility.Visible;
+            PanelProcessing.Visibility = Visibility.Visible;
+            TextResult.Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Cancels processing with no message and no display of processing results.
+        /// </summary>
+        public void CancelProcessing()
+        {
+            PanelRoot.Visibility = Visibility.Collapsed;
+            RestoreMessages();
         }
 
         /// <summary>
         /// Stops processing, and displays an error or optional success message
+        /// When stopped, makes all controls Collapsed, and TextResult Visible.
         /// </summary>
         /// <param name="results">ProcessResult result of back end call</param>
         /// <param name="successMessage">UI determined success message</param>
-        public void StopProcessing(ProcessResult results, string successMessage = "")
+        public void StopProcessing(ProcessResult results, string successMessage)
         {
-            // Fill with errors and/or success. The app will figure out what to do
+            TextResult.Text = successMessage;
+            StopProcessing(results);
+        }
+
+        /// <summary>
+        /// Stops processing, and displays an error or optional success message
+        /// When stopped, makes all controls Collapsed, and TextResult Visible.
+        /// </summary>
+        /// <param name="results">ProcessResult result of back end call</param>
+        public void StopProcessing(ProcessResult results)
+        {
             if (results.FailedRules.Count > 0)
             {
-                TextError = results.FailedRules.FirstOrDefaultSafe().Value;
-            } else
-            {
-                TextSuccess = successMessage;
+                TextResult.Text = results.FailedRules.FirstOrDefaultSafe().Value;
             }
+            PanelRoot.Visibility = Visibility.Visible;
+            PanelProcessing.Visibility = Visibility.Collapsed;
+            TextResult.Visibility = Visibility.Visible;
+            RestoreMessages();
         }
-        
+
+        /// <summary>
+        /// Clears any temporary messages and restores message from markup
+        /// </summary>
+        private void RestoreMessages()
+        {
+            TextProcessingMessage = processingMessageBackup != TypeExtension.DefaultString ? processingMessageBackup : TextProcessingMessage;
+            processingMessageBackup = TypeExtension.DefaultString;
+            TextResultMessage = successMessageBackup != TypeExtension.DefaultString ? successMessageBackup : TextResultMessage;
+            successMessageBackup = TypeExtension.DefaultString;
+        }
+
         /// <summary>
         /// Validate this control
         /// </summary>
         /// <returns></returns>
         public override bool Validate()
         {
-            bool returnValue = TypeExtension.DefaultBoolean;
-
-            // Validate text length
-            ValidateTextLength(this.TextProgressMessage.DefaultSafe<Control>(), this.TextProgressMessage.Text);
-            
-            return returnValue;
+            return ValidateTextLength(this.TextProcessingMessage.DefaultSafe<Control>(), TextProcessing.Text);           
         }
     }
 }

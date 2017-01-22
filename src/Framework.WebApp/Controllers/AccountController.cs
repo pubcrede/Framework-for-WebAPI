@@ -71,8 +71,11 @@ namespace Framework.WebApp
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            LoginViewModel model = new LoginViewModel();
+            model.Email = "demouser@genesysframework.com";
+            model.Password = "Test!234";
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return View(model);
         }
 
         //

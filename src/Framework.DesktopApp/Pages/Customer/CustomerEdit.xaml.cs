@@ -90,7 +90,7 @@ namespace Framework.Pages
         /// <param name="e">Event arguments</param>
         protected override async void Page_ModelReceived(object sender, NewModelReceivedEventArgs e)
         {
-            this.OkCancel.StartProcessing("Working...");
+            this.OkCancel.StartProcessing("Loading data...");
             CustomerModel model = await MyViewModel.GetByID(e.NewModelData.ToString().TryParseInt32());
             BindModel(model);
             this.OkCancel.CancelProcessing();
@@ -104,12 +104,12 @@ namespace Framework.Pages
         {
             MyViewModel.Model = modelData.DirectCastSafe<CustomerModel>();
             DataContext = MyViewModel.Model;
-            BindControl(ref this.TextID, MyViewModel.Model.ID.ToString(), "ID");
-            BindControl(ref this.TextKey, MyViewModel.Model.Key.ToString(), "Key");
-            BindControl(ref this.TextFirstName, MyViewModel.Model.FirstName, "FirstName");
-            BindControl(ref this.TextLastName, MyViewModel.Model.LastName, "LastName");
-            BindControl(ref this.TextBirthDate, MyViewModel.Model.BirthDate, "BirthDate");
-            BindControl(ref this.DropDownGender, MyViewModel.Model.GenderSelections(), MyViewModel.Model.GenderID, "GenderID");
+            SetBinding(ref this.TextID, MyViewModel.Model.ID.ToString(), "ID");
+            SetBinding(ref this.TextKey, MyViewModel.Model.Key.ToString(), "Key");
+            SetBinding(ref this.TextFirstName, MyViewModel.Model.FirstName, "FirstName");
+            SetBinding(ref this.TextLastName, MyViewModel.Model.LastName, "LastName");
+            SetBinding(ref this.TextBirthDate, MyViewModel.Model.BirthDate, "BirthDate");
+            SetBinding(ref this.DropDownGender, MyViewModel.Model.GenderSelections(), MyViewModel.Model.GenderID, "GenderID");
         }
 
         /// <summary>

@@ -111,11 +111,11 @@ namespace Framework.Pages
         {
             MyViewModel.Model = modelData.DirectCastSafe<CustomerModel>();
             DataContext = MyViewModel.Model;
-            BindControl(ref this.TextID, MyViewModel.Model.ID.ToString(), "ID");
-            BindControl(ref this.TextKey, MyViewModel.Model.Key.ToString(), "Key");
-            BindControl(ref this.TextFirstName, MyViewModel.Model.FirstName, "FirstName");
-            BindControl(ref this.TextLastName, MyViewModel.Model.LastName, "LastName");
-            BindControl(ref this.TextBirthDate, MyViewModel.Model.BirthDate.ToString(), "BirthDate");
+            SetBinding(ref this.TextID, MyViewModel.Model.ID.ToString(), "ID");
+            SetBinding(ref this.TextKey, MyViewModel.Model.Key.ToString(), "Key");
+            SetBinding(ref this.TextFirstName, MyViewModel.Model.FirstName, "FirstName");
+            SetBinding(ref this.TextLastName, MyViewModel.Model.LastName, "LastName");
+            SetBinding(ref this.TextBirthDate, MyViewModel.Model.BirthDate.ToString(), "BirthDate");
             this.TextGender.Text = MyViewModel.Model.GenderSelections().Find(x => x.Key == MyViewModel.Model.GenderID).Value;
         }
         
@@ -147,6 +147,7 @@ namespace Framework.Pages
         {
             var newComponent = System.Windows.Application.LoadComponent(CustomerDelete.Uri);
             var navService = NavigationService.GetNavigationService(this);
+            var returnValue = new ProcessResult();
 
             if (newComponent is ReadOnlyPage)
             {

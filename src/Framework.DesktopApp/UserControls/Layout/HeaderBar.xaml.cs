@@ -76,6 +76,7 @@ namespace Framework.UserControls
         public HeaderBar()
         {
             InitializeComponent();
+            GotFocus += TopBarControl_GotFocus;
         }
 
         /// <summary>
@@ -97,6 +98,35 @@ namespace Framework.UserControls
             base.Partial_Loaded(sender, e);
         }
 
+        /// <summary>
+        /// Configures self based on RootFrame.CanGoBack
+        /// </summary>
+        /// <param name="sender">Event sender</param>
+        /// <param name="e">Event args</param>
+        private void TopBarControl_GotFocus(object sender, EventArgs e)
+        {
+            if (MyApplication.RootFrame.CanGoBack == false)
+            {
+                this.ButtonGoBack.IsEnabled = false;
+            } else
+            {
+                this.ButtonGoBack.IsEnabled = true;
+                this.ButtonGoBack.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        /// <summary>
+        /// Invoked when the page's back button is pressed.
+        /// </summary>
+        /// <param name="sender">The back button instance.</param>
+        /// <param name="e">Event data that describes how the back button was clicked.</param>
+        private void GoBack(object sender, EventArgs e)
+        {
+            if (MyApplication.RootFrame.CanGoBack)
+            {
+                MyApplication.RootFrame.GoBack();
+            }
+        }
 
         /// <summary>
         /// Validate this control

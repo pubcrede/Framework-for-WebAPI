@@ -1,5 +1,5 @@
 <ResourceDictionary
-    xmlns:p="clr-namespace:Framework.UserControls"
+    xmlns:uc="clr-namespace:Framework.UserControls"
     xmlns:t="clr-namespace:Framework.Themes"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -13,9 +13,9 @@
                             <RowDefinition Height="1*" />
                             <RowDefinition Height="9*" />
                         </Grid.RowDefinitions>
-                        <p:HeaderBar Text="Genesys Framework for WPF" Grid.Row="0" />
+                        <uc:HeaderBar Text="Genesys Framework for WPF" Grid.Row="0" />
                         <StackPanel Orientation="Horizontal" Grid.Row="1">
-                            <p:HamburgerMenu WidthOpen="100" WidthClosed="100" />
+                            <uc:HamburgerMenu WidthOpen="100" WidthClosed="100" />
                             <StackPanel Margin="0,10,0,0">
                                 <ContentPresenter Content="{TemplateBinding ContentHeader}" />
                                 <TextBlock FontSize="22" Margin="50,10,0,0"><ContentPresenter Content="{TemplateBinding Title}" /></TextBlock>

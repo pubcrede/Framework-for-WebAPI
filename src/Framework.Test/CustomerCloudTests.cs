@@ -150,14 +150,14 @@ namespace Framework.Tests
             urlFull = String.Format("{0}/{1}/{2}", urlRoot, "Customer", idToDelete);
             requestDelete = new HttpRequestDelete<CustomerModel>(urlFull);
             responseData = await requestDelete.SendAsync();
-            Assert.IsTrue(responseData.ID != TypeExtension.DefaultInteger, "Customer did not delete.");
-            Assert.IsTrue(responseData.Key != TypeExtension.DefaultGuid, "Customer did not delete.");
+            Assert.IsTrue(responseData.ID == TypeExtension.DefaultInteger, "Customer did not delete.");
+            Assert.IsTrue(responseData.Key == TypeExtension.DefaultGuid, "Customer did not delete.");
 
             // Get second confirmation
             requestGet = new HttpRequestGet<CustomerModel>(urlFull);
             responseData = await requestDelete.SendAsync();
-            Assert.IsTrue(responseData.ID != TypeExtension.DefaultInteger, "Customer did not delete.");
-            Assert.IsTrue(responseData.Key != TypeExtension.DefaultGuid, "Customer did not delete.");
+            Assert.IsTrue(responseData.ID == TypeExtension.DefaultInteger, "Customer did not delete.");
+            Assert.IsTrue(responseData.Key == TypeExtension.DefaultGuid, "Customer did not delete.");
         }
 
         /// <summary>

@@ -16,7 +16,7 @@
 //       limitations under the License. 
 // </copyright>
 //-----------------------------------------------------------------------
-using Framework.Application;
+using Framework.Applications;
 using Framework.Pages;
 using Genesys.Extensions;
 using Genesys.Extras.Collections;
@@ -133,7 +133,7 @@ namespace Framework.UserControls
         /// </summary>
         /// <param name="item"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref Image item, string bindingProperty)
+        public void SetBinding(ref Image item, string bindingProperty)
         {
             item.SetBinding(Image.SourceProperty, new Binding() { Path = new PropertyPath(bindingProperty), Mode = BindingMode.OneWay });
         }
@@ -145,7 +145,7 @@ namespace Framework.UserControls
         /// <param name="item"></param>
         /// <param name="initialValue"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref TextBlock item, string initialValue, string bindingProperty)
+        public void SetBinding(ref TextBlock item, string initialValue, string bindingProperty)
         {
             item.SetBinding(TextBlock.TextProperty, new Binding() { Path = new PropertyPath(bindingProperty), Mode = BindingMode.OneWay });
         }
@@ -156,7 +156,7 @@ namespace Framework.UserControls
         /// <param name="item"></param>
         /// <param name="initialValue"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref TextBox item, string initialValue, string bindingProperty)
+        public void SetBinding(ref TextBox item, string initialValue, string bindingProperty)
         {
             item.SetBinding(TextBox.TextProperty, new Binding() { Path = new PropertyPath(bindingProperty), Mode = BindingMode.TwoWay });
         }
@@ -167,7 +167,7 @@ namespace Framework.UserControls
         /// <param name="item"></param>
         /// <param name="initialValue"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref TextBox item, DateTime initialValue, string bindingProperty)
+        public void SetBinding(ref TextBox item, DateTime initialValue, string bindingProperty)
         {
             item.SetBinding(TextBox.TextProperty, new Binding() { Path = new PropertyPath(bindingProperty), Mode = BindingMode.TwoWay });
         }
@@ -178,7 +178,7 @@ namespace Framework.UserControls
         /// <param name="item"></param>
         /// <param name="initialValue"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref PasswordBox item, string initialValue, string bindingProperty)
+        public void SetBinding(ref PasswordBox item, string initialValue, string bindingProperty)
         {
             item.SetBinding(PasswordBox.PasswordCharProperty, new Binding() { Path = new PropertyPath(bindingProperty), Mode = BindingMode.TwoWay });
         }
@@ -189,7 +189,7 @@ namespace Framework.UserControls
         /// <param name="item"></param>
         /// <param name="initialValue"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref DatePicker item, DateTime initialValue, string bindingProperty)
+        public void SetBinding(ref DatePicker item, DateTime initialValue, string bindingProperty)
         {
             item.SetBinding(DatePicker.TextProperty, new Binding() { Path = new PropertyPath(bindingProperty), Mode = BindingMode.TwoWay });
         }
@@ -201,7 +201,7 @@ namespace Framework.UserControls
         /// <param name="collection"></param>
         /// <param name="selectedKey"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref ComboBox item, List<KeyValuePair<int, string>> collection, int selectedKey, string bindingProperty)
+        public void SetBinding(ref ComboBox item, List<KeyValuePair<int, string>> collection, int selectedKey, string bindingProperty)
         {
             item.ItemsSource = collection;
             item.DisplayMemberPath = "Value";
@@ -222,7 +222,7 @@ namespace Framework.UserControls
         /// <param name="collection"></param>
         /// <param name="selectedKey"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref ComboBox item, List<KeyValuePair<Guid, string>> collection, int selectedKey, string bindingProperty)
+        public void SetBinding(ref ComboBox item, List<KeyValuePair<Guid, string>> collection, int selectedKey, string bindingProperty)
         {
             item.ItemsSource = collection;
             item.DisplayMemberPath = "Value";
@@ -243,7 +243,7 @@ namespace Framework.UserControls
         /// <param name="collection"></param>
         /// <param name="selectedKey"></param>
         /// <param name="bindingProperty"></param>
-        public void BindControl(ref ComboBox item, KeyValueListString collection, string selectedKey, string bindingProperty)
+        public void SetBinding(ref ComboBox item, KeyValueListString collection, string selectedKey, string bindingProperty)
         {
             item.ItemsSource = collection;
             item.DisplayMemberPath = "Value";

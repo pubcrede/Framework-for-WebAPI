@@ -7,7 +7,7 @@ For C# files (*.cs, *.cshtml, *.xaml.cs), we use Pascal Case, strongly-typed, OO
 
 For non code files (*.html, *.xml, *.xaml, etc), please have the non-code markup/text reference any code methods directly. I.e. A XAML/MVC event must be specified in the markup, so a developer knows what .cs code this markup calls.
 
-For *.config files, keep custom entries to a minimum. But DO include: Web service root URLs, redirect out URLs, 100% uptime connection strings (i.e. for exception log tables.)
+For *.config files, keep custom entries to a minimum. But do include: Web service root URLs, redirect out URLs, 100% uptime connection strings (i.e. for exception log tables.)
 
 The general rule we follow is "use Visual Studio defaults".
 

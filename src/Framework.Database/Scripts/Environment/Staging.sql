@@ -25,6 +25,4 @@ WHEN MATCHED THEN
 WHEN NOT MATCHED BY TARGET THEN 
 	INSERT ([CustomerKey], [FirstName], [MiddleName], [LastName], [BirthDate], [CustomerTypeID], [CreatedActivityID], [ModifiedActivityID]) 
 		Values (Source.[CustomerKey], Source.[FirstName], Source.[MiddleName], Source.[LastName], Source.[BirthDate], CT.[CustomerTypeID], @ActivityID_Staging, @ActivityID_Staging)
-; -- SHARED table, do not delete records. Allow other sources (i.e. DBA, other apps, etc.) to insert records
---WHEN NOT MATCHED BY SOURCE THEN 
---	DELETE;
+;

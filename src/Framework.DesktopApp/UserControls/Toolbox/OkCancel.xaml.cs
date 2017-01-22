@@ -114,15 +114,15 @@ namespace Framework.UserControls
         /// </summary>
         /// <value></value>
         /// <returns></returns>
-        public string TextProcessing
+        public string TextProcessingMessage
         {
             get
             {
-                return ProgressProcessing.TextProgress;
+                return ProgressProcessing.TextProcessingMessage;
             }
             set
             {
-                ProgressProcessing.TextProgress = value;
+                ProgressProcessing.TextProcessingMessage = value;
             }
         }
 
@@ -131,51 +131,17 @@ namespace Framework.UserControls
         /// </summary>
         /// <value></value>
         /// <returns></returns>
-        public string TextSuccessful
+        public string TextResultMessage
         {
             get
             {
-                return ProgressProcessing.TextSuccess;
+                return ProgressProcessing.TextResultMessage;
             }
             set
             {
-                ProgressProcessing.TextSuccess = value;
+                ProgressProcessing.TextResultMessage = value;
             }
         }
-
-        /// <summary>
-        /// Progress text
-        /// </summary>
-        /// <value></value>
-        /// <returns></returns>
-        public string TextErrored
-        {
-            get
-            {
-                return ProgressProcessing.TextError;
-            }
-            set
-            {
-                ProgressProcessing.TextError = value;
-            }
-        }
-
-        /// <summary>
-        /// Progress text
-        /// </summary>
-        /// <value></value>
-        /// <returns></returns>
-        public string TextCanceled
-        {
-            get
-            {
-                return ProgressProcessing.TextCancel;
-            }
-            set
-            {
-                ProgressProcessing.TextCancel = value;
-            }
-        }      
 
         /// <summary>
         /// OK Button
@@ -299,31 +265,50 @@ namespace Framework.UserControls
         /// <summary>
         /// Starts the processing
         /// </summary>
-        public void StartProcessing(string processingMessage = "")
+        public void StartProcessing()
+        {
+            StackButtons.Visibility = Visibility.Collapsed;
+            ProgressProcessing.StartProcessing();
+        }
+
+        /// <summary>
+        /// Starts the processing
+        /// </summary>
+        public void StartProcessing(string processingMessage)
         {
             StackButtons.Visibility = Visibility.Collapsed;
             ProgressProcessing.StartProcessing(processingMessage);
         }
 
         /// <summary>
-        /// Stops processing, and displays an error or optional success message
+        /// Cancels processing with no message and no display of processing results.
         /// </summary>
-        /// <param name="results"></param>
-        /// <param name="successMessage"></param>
-        public void StopProcessing(ProcessResult results)
+        public void CancelProcessing()
         {
+            ProgressProcessing.CancelProcessing();
             StackButtons.Visibility = Visibility.Visible;
-            ProgressProcessing.StopProcessing(results, TextSuccessful);
         }
 
         /// <summary>
-        /// Stops processing, and displays an error or optional success message
+        /// Stops processing, and supplies ProcessResult data
         /// </summary>
-        /// <param name="cancelMessage"></param>
-        public void CancelProcessing(string cancelMessage = "")
+        /// <param name="results">ProcessResult class with results of the processing.</param>
+        /// <param name="successMessage">Message to display if success</param>
+        public void StopProcessing(ProcessResult results)
         {
+            ProgressProcessing.StopProcessing(results);
             StackButtons.Visibility = Visibility.Visible;
-            ProgressProcessing.StopProcessing(new ProcessResult(), cancelMessage);
+        }
+
+        /// <summary>
+        /// Stops processing, and supplies ProcessResult data
+        /// </summary>
+        /// <param name="results">ProcessResult class with results of the processing.</param>
+        /// <param name="successMessage">Message to display if success</param>
+        public void StopProcessing(ProcessResult results, string successMessage)
+        {
+            ProgressProcessing.StopProcessing(results, successMessage);
+            StackButtons.Visibility = Visibility.Visible;
         }
 
         /// <summary>

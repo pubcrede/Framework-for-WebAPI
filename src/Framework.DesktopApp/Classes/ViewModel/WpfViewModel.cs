@@ -16,7 +16,7 @@
 //       limitations under the License. 
 // </copyright>
 //-----------------------------------------------------------------------
-using Framework.Application;
+using Framework.Applications;
 using Framework.Pages;
 using Genesys.Extensions;
 using Genesys.Extras.Net;

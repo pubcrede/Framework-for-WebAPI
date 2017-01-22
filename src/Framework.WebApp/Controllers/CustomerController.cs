@@ -188,7 +188,7 @@ namespace Framework.WebApp
 
             customer = CustomerInfo.GetByID(model.ID);
             customer.Delete();
-            customer = CustomerInfo.GetByID(model.ID);
+            customer = CustomerInfo.GetByID(model.ID); // Verify delete, success returns empty object
             if (customer.ID == TypeExtension.DefaultInteger)
             {
                 model.Fill(customer); // Fill the CustomerModel view model, so the class can be specific to the screen's needs and drop the heavy data access items.
