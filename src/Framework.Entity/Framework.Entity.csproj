@@ -95,6 +95,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FrameworkEntity.Context.tt</DependentUpon>
     </Compile>
+    <Content Include="App_Data\AppSettings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\ConnectionStrings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="FrameworkEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

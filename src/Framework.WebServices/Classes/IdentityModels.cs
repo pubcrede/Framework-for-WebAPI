@@ -16,6 +16,7 @@
 //       limitations under the License. 
 // </copyright>
 //-----------------------------------------------------------------------
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -42,7 +43,17 @@ namespace Framework.WebServices
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
+        /// <summary>
+        /// Set the Identity tables schema before dbcontext is used
+        /// </summary>
+        /// <param name="modelBuilder"></param>
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("Identity");
+            base.OnModelCreating(modelBuilder);
+        }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

@@ -79,6 +79,8 @@
     <Folder Include="Activity" />
     <Folder Include="Activity\Stored Procedures" />
     <Folder Include="Activity\Tables" />
+    <Folder Include="Identity" />
+    <Folder Include="Identity\Tables" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Data\Master\CustomerType.sql" />
@@ -119,5 +121,16 @@
       <DefaultValue>Dev</DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>
     </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\Identity.sql" />
+    <Build Include="Identity\Tables\AspNetUsers.sql" />
+    <Build Include="Identity\Tables\__MigrationHistory.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Identity\Tables\AspNetRoles.sql" />
+    <Build Include="Identity\Tables\AspNetUserClaims.sql" />
+    <Build Include="Identity\Tables\AspNetUserLogins.sql" />
+    <Build Include="Identity\Tables\AspNetUserRoles.sql" />
   </ItemGroup>
 </Project>

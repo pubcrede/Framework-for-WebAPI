@@ -1,14 +1,14 @@
 ﻿PRINT N'Environment-specific script: Dev.sql';
 
 --------------------------------------------------------------
--- Customer Test
+-- Customer Test Data
 --------------------------------------------------------------
 -- Activity required for any insert, update and delete
 Declare @ActivityID_Dev As Int
 Insert INTO [Activity].[Activity] ([IdentityUserName]) Select N'SQLScript@Genesys.com' As IdentityUserName
 Select	@ActivityID_Dev = SCOPE_IDENTITY()
 
-MERGE INTO [Entity].[Customer] AS Target 
+MERGE INTO [Entity].[Customer] AS Target
 USING (VALUES 
 	(N'9A530E38-6B22-48CA-95FB-182D5A64C754', N'36B08B23-0C1D-4488-B557-69665FD666E1', N'John', N'M', N'Smith', N'05/20/1968'),
 	(N'87761D52-BB75-4A10-9178-675A89782667', N'BF3797EE-06A5-47F2-9016-369BEB21D944', N'Siva', N'N', N'Kumar', N'11/15/1976'),
@@ -27,9 +27,12 @@ WHEN NOT MATCHED BY TARGET THEN
 		Values (Source.[CustomerKey], Source.[FirstName], Source.[MiddleName], Source.[LastName], Source.[BirthDate], CT.[CustomerTypeID], @ActivityID_Dev, @ActivityID_Dev)
 ;
 
+--------------------------------------------------------------
+-- Test Username
+--------------------------------------------------------------
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE' AND TABLE_NAME='AspNetUsers')
 Begin
-	MERGE INTO [dbo].[AspNetUsers] AS Target 
+	MERGE INTO [Identity].[AspNetUsers] AS Target 
 	USING (VALUES 
 	(N'E593A80E-7B65-499E-9AC6-CA5CBF828E3B', N'demouser@genesysframework.com', 0, N'AAkL6HezY2CeS4GcqWqikW6oveZ6gywOxPkq0+zQpCdr+23IYABz7y0grIPcpVelkA==', N'1116ce3e-2505-41d1-b5e9-4031b5481eb4', NULL, 0, 0, NULL, 1, 0, N'demouser@genesysframework.com')
 	)

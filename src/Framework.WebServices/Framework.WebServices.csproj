@@ -317,15 +317,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Local\AppSettings.config" />
-    <Content Include="Local\ConnectionStrings.config" />
+    <Content Include="App_Data\AppSettings.config" />
+    <Content Include="App_Data\ConnectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework.Entity\Framework.Entity.csproj">
