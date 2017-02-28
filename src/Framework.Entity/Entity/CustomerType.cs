@@ -27,7 +27,7 @@ namespace Framework.Entity
     /// <summary>
     /// EntityCustomer
     /// </summary>
-    [CLSCompliant(true), ConnectionString("MyCodeConnection")]
+    [CLSCompliant(true), ConnectionString("DefaultConnection")]
     public partial class CustomerType : ReadOnlyEntity<CustomerType>, ICustomerType
     {
         /// <summary>

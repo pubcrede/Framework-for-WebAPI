@@ -50,16 +50,16 @@
     <None Include="PostBuild.bat" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Genesys.Extensions.Universal, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Universal.3.0.12-rc2\lib\portable-net451+win81+wpa81\Genesys.Extensions.Universal.dll</HintPath>
+    <Reference Include="Genesys.Extensions.Universal, Version=3.17.1.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.1\lib\portable-net451+win81+wpa81\Genesys.Extensions.Universal.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Genesys.Extras.Universal, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Universal.3.0.12-rc2\lib\portable-net451+win81+wpa81\Genesys.Extras.Universal.dll</HintPath>
+    <Reference Include="Genesys.Extras.Universal, Version=3.17.1.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.1\lib\portable-net451+win81+wpa81\Genesys.Extras.Universal.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Genesys.Foundation.Interfaces, Version=3.0.12.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Foundation.Interfaces.3.0.12-rc2\lib\portable-net451+win81+wpa81\Genesys.Foundation.Interfaces.dll</HintPath>
+    <Reference Include="Genesys.Foundation.Interfaces, Version=3.17.1.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Foundation.Interfaces.3.17.1\lib\portable-net451+win81+wpa81\Genesys.Foundation.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

@@ -31,7 +31,7 @@ namespace Framework.Entity
     /// <summary>
     /// EntityCustomer
     /// </summary>
-    [CLSCompliant(true), ConnectionString("MyCodeConnection")]
+    [CLSCompliant(true), ConnectionString("DefaultConnection")]
     public partial class CustomerInfo : SaveableEntity<CustomerInfo>, ICustomer
     {
         /// <summary>
