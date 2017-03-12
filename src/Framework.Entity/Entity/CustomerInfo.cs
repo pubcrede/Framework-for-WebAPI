@@ -32,7 +32,7 @@ namespace Framework.Entity
     /// EntityCustomer
     /// </summary>
     [CLSCompliant(true), ConnectionString("DefaultConnection")]
-    public partial class CustomerInfo : SaveableEntity<CustomerInfo>, ICustomer
+    public partial class CustomerInfo : CrudEntity<CustomerInfo>, ICustomer
     {
         /// <summary>
         /// ISO 5218 Standard for Gender values
@@ -93,14 +93,14 @@ namespace Framework.Entity
         /// <summary>
         /// Save the entity to the database. This method will auto-generate activity tracking.
         /// </summary>
-        public override int Save()
+        public new ICrudEntity<CustomerInfo> Save()
         {
             // Ensure data does not contain cross site scripting injection HTML/Js/SQL
             this.FirstName = new HtmlUnsafeCleanser(this.FirstName).Cleanse();
             this.MiddleName = new HtmlUnsafeCleanser(this.MiddleName).Cleanse();
             this.LastName = new HtmlUnsafeCleanser(this.LastName).Cleanse();
             base.Save();
-            return this.ID;
+            return this;
         }
 
         /// <summary>
@@ -108,14 +108,14 @@ namespace Framework.Entity
         /// This method requires a valid Activity to track this database commit
         /// </summary>
         /// <param name="activity">Activity tracking this record</param>
-        public override int Save(IActivity activity)
+        public new ICrudEntity<CustomerInfo> Save(IActivity activity)
         {
             // Ensure data does not contain cross site scripting injection HTML/Js/SQL
             this.FirstName = new HtmlUnsafeCleanser(this.FirstName).Cleanse();
             this.MiddleName = new HtmlUnsafeCleanser(this.MiddleName).Cleanse();
             this.LastName = new HtmlUnsafeCleanser(this.LastName).Cleanse();
             base.Save(activity);
-            return this.ID;
+            return this;
         }
     }
 }

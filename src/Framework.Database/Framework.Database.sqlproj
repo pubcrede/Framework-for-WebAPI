@@ -133,4 +133,10 @@
     <Build Include="Identity\Tables\AspNetUserLogins.sql" />
     <Build Include="Identity\Tables\AspNetUserRoles.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
 </Project>

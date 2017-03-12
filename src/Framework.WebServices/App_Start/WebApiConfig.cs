@@ -16,9 +16,7 @@
 //       limitations under the License. 
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
 using System.Web.Http;
-using Framework.WebServices;
 
 namespace Framework.WebServices
 {
@@ -35,7 +33,7 @@ namespace Framework.WebServices
         {
             config.MapHttpAttributeRoutes();
 
-            // Route for WebApi's default /api/Controller. For familiarity with standard WebApi.
+            // Route for WebApi's default /api/Controller. For familiarity with standard Web API.
             config.Routes.MapHttpRoute(
                 name: "DefaulApi",
                 routeTemplate: "api/{controller}/{id}",

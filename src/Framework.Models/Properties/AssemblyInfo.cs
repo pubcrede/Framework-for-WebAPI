@@ -22,11 +22,11 @@ using System.Reflection;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Genesys Framework Quick-Start Models")]
-[assembly: AssemblyDescription("Genesys Framework Quick-Start Models for View Models and Http transport")]
+[assembly: AssemblyTitle("Genesys Source Quick-Start Models")]
+[assembly: AssemblyDescription("Genesys Source Quick-Start Models for View Models and Http transport")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Genesys Source")]
-[assembly: AssemblyProduct("Genesys Framework Quick-Start Models")]
+[assembly: AssemblyProduct("Genesys Source Quick-Start Models")]
 [assembly: AssemblyCopyright("Copyright © 2017 Genesys Source. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -42,8 +42,8 @@ using System.Reflection;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("3.17.01")]
-[assembly: AssemblyFileVersion("3.17.01")]
+[assembly: AssemblyVersion("3.17.04")]
+[assembly: AssemblyFileVersion("3.17.04")]
 
 // Must add this to every AssemblyInfo.cs that wants to be compliant
 [assembly: System.CLSCompliant(true)]

@@ -5,7 +5,7 @@ REM PostBuildEvent: Call $(ProjectDir)PostBuild.Bat $(TargetDir) $(TargetName)
 REM Common are: $(TargetPath) = output file, $(TargetDir) = full bin path , $(OutDir) = bin\debug
 
 REM Locals
-SET LibFolder=\lib\Framework
+SET LibFolder=\lib\Foundation
 SET FullPath=%1%2
 SET FullPath=%FullPath:"=%
 SET FullPath="%FullPath%.*"

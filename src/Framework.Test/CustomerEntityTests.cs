@@ -116,15 +116,18 @@ namespace Framework.Tests
         [TestMethod()]
         public void Customer_Entity_CustomerDelete()
         {
-            CustomerInfo newCustomer = new CustomerInfo();
+            CustomerInfo customer = new CustomerInfo();
+            int id = TypeExtension.DefaultInteger;
 
             // Simulate the service layer transforming the Model (CustomerModel) to the Data Access Object (CustomerInfo)
-            newCustomer.Fill(customersFromScreen[0]);
-            newCustomer.Save();
-            Assert.IsTrue(newCustomer.ID != TypeExtension.DefaultInteger, "Customer didnt save.");
+            customer.Fill(customersFromScreen[0]);
+            id = customer.ID;
+            customer.Delete();
+            customer = CustomerInfo.GetByID(id);
+            Assert.IsTrue(customer.ID == TypeExtension.DefaultInteger, "Customer didnt delete.");
 
             // Add to recycle bin for cleanup
-            recycleBin.Add(newCustomer.ID);
+            recycleBin.Add(customer.ID);
         }
 
         /// <summary>
