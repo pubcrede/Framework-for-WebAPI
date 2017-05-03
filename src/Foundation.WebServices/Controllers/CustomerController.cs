@@ -1,27 +1,17 @@
-//-----------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------
 // <copyright file="CustomerController.cs" company="Genesys Source">
-//      Licensed to the Apache Software Foundation (ASF) under one or more 
-//      contributor license agreements.  See the NOTICE file distributed with 
-//      this work for additional information regarding copyright ownership.
-//      The ASF licenses this file to You under the Apache License, Version 2.0 
-//      (the 'License'); you may not use this file except in compliance with 
-//      the License.  You may obtain a copy of the License at 
-//       
-//        http://www.apache.org/licenses/LICENSE-2.0 
-//       
-//       Unless required by applicable law or agreed to in writing, software  
-//       distributed under the License is distributed on an 'AS IS' BASIS, 
-//       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
-//       See the License for the specific language governing permissions and  
-//       limitations under the License. 
+//      Copyright (c) 2017 Genesys Source. All rights reserved.
+//      All rights are reserved. Reproduction or transmission in whole or in part, in
+//      any form or by any means, electronic, mechanical or otherwise, is prohibited
+//      without the prior written consent of the copyright owner.
 // </copyright>
 //-----------------------------------------------------------------------
-using System;
-using System.Web.Mvc;
+
+using Foundation.Entity;
 using Genesys.Extensions;
 using Genesys.Extras.Web.Http;
-using Foundation.Entity;
-using Genesys.Foundation.Entity;
+using Genesys.Foundation.Data;
+using System.Web.Http;
 
 namespace Foundation.WebServices
 {
@@ -44,7 +34,7 @@ namespace Foundation.WebServices
         [HttpGet()]
         public CustomerModel Get(string id)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             CustomerInfo customer = new CustomerInfo();
             CustomerModel model = new CustomerModel();
 
@@ -81,7 +71,7 @@ namespace Foundation.WebServices
         [HttpPost()]
         public CustomerModel Post(CustomerModel model)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             CustomerInfo customer = new CustomerInfo();
 
             customer = reader.GetByID(model.ID);
@@ -100,7 +90,7 @@ namespace Foundation.WebServices
         [HttpDelete()]
         public CustomerModel Delete(string id)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             CustomerInfo customer = new CustomerInfo();
             CustomerModel model = new CustomerModel();
 

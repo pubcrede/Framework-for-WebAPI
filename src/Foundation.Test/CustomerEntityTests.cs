@@ -19,14 +19,19 @@
 //-----------------------------------------------------------------------
 using Foundation.Entity;
 using Genesys.Extensions;
+using Genesys.Extras.Configuration;
 using Genesys.Extras.Mathematics;
+using Genesys.Extras.Net;
+using Genesys.Extras.Serialization;
+using Genesys.Foundation.Data;
 using Genesys.Foundation.Entity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
-namespace Genesys.Foundation.Test
+namespace Foundation.Test
 {
     [TestClass()]
     public class CustomerEntityTests
@@ -154,14 +159,14 @@ namespace Genesys.Foundation.Test
             Assert.IsTrue(dbCustomer.ID == TypeExtension.DefaultInteger);
             Assert.IsTrue(dbCustomer.Key == TypeExtension.DefaultGuid);
         }
-
+                
         /// <summary>
         /// Cleanup all data
         /// </summary>
         [ClassCleanupAttribute()]
         private void Cleanup()
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             foreach (int item in recycleBin)
             {
                 reader.GetByID(item).Delete();

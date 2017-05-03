@@ -1,0 +1,56 @@
+﻿@model Foundation.Entity.CustomerModel
+@using Genesys.Extensions
+
+<div class="genesys-box">
+    <section id="CustomerDeleteForm">
+        <h4 class="genesys-box-title">Delete a Customer</h4>
+        @using (Html.BeginForm(CustomerController.DeleteAction, CustomerController.ControllerName, new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Key)
+            <div class="form-group">
+                @Html.LabelFor(m => m.ID, "ID", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.LabelFor(m => m.ID, Model.ID == TypeExtension.DefaultInteger ? TypeExtension.DefaultString : Model.ID.ToString(), new { @class = "control-label", @placeholder = "Customer first name" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName, "First Name", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.LabelFor(m => m.FirstName, Model.FirstName, new { @class = "control-label", @placeholder = "Customer first name" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName, "Last Name", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.LabelFor(m => m.LastName, Model.LastName, new { @class = "control-label", @placeholder = "Customer last name" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.BirthDate, "Birth Date", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.LabelFor(m => m.BirthDate, Model.BirthDate == TypeExtension.DefaultDate ? TypeExtension.DefaultString : Model.BirthDate.ToString("MM/dd/yyyy"), new { @class = "control-label BirthDate", type = "date" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.GenderID, "Gender", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.LabelFor(m => m.GenderID, Model.GenderSelections().Where(y => y.Key == Model.GenderID).FirstOrDefault().Value ?? "Not Selected", new { @class = "control-label Gender" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="genesys-text-right col-sm-11">
+                    <button type="submit" class="btn btn-primary">Delete this Customer</button>
+                </div>
+            </div>
+        }
+    </section>
+</div>
+@if (ViewData.ModelState.IsValid == false)
+{
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10 genesys-spacer-all">
+            @Html.ValidationSummary(false, "Action resulted in...", new { @class = "text-danger" })
+        </div>
+    </div>
+}

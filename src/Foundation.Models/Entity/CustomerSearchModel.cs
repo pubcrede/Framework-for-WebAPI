@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------
 // <copyright file="CustomerSearchModel.cs" company="Genesys Source">
+//      Copyright (c) 2017 Genesys Source. All rights reserved.
 //      Licensed to the Apache Software Foundation (ASF) under one or more 
 //      contributor license agreements.  See the NOTICE file distributed with 
 //      this work for additional information regarding copyright ownership.
@@ -26,11 +27,12 @@ namespace Foundation.Entity
     /// <summary>
     /// Customer Search Results
     /// </summary>
+    [CLSCompliant(true)]
     public class CustomerSearchModel : ModelEntity<CustomerSearchModel>, ICustomer
     {
         /// <summary>
         /// FirstName of customers
-        /// </summary>
+        /// </summary>     
         public string FirstName { get; set; } = TypeExtension.DefaultString;
 
         /// <summary>

@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,7 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="PostBuild.bat" />
   </ItemGroup>
@@ -58,19 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Genesys.Extensions.Universal, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.4.2\lib\portable-net451+win81+wpa81\Genesys.Extensions.Universal.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.4.706\lib\portable-net451+win81+wpa81\Genesys.Extensions.Universal.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Extras.Universal, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.4.2\lib\portable-net451+win81+wpa81\Genesys.Extras.Universal.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.4.706\lib\portable-net451+win81+wpa81\Genesys.Extras.Universal.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Foundation.Interfaces, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Foundation.Interfaces.3.17.4.2\lib\portable-net451+win81+wpa81\Genesys.Foundation.Interfaces.dll</HintPath>
+      <HintPath>..\packages\Genesys.Foundation.Interfaces.3.17.4.706\lib\portable-net451+win81+wpa81\Genesys.Foundation.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Foundation.Models, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Foundation.Models.3.17.4.2\lib\portable-net451+win81+wpa81\Genesys.Foundation.Models.dll</HintPath>
+      <HintPath>..\packages\Genesys.Foundation.Models.3.17.4.706\lib\portable-net451+win81+wpa81\Genesys.Foundation.Models.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

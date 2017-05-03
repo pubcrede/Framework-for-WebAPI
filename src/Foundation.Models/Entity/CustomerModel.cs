@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------
 // <copyright file="CustomerModel.cs" company="Genesys Source">
+//      Copyright (c) 2017 Genesys Source. All rights reserved.
 //      Licensed to the Apache Software Foundation (ASF) under one or more 
 //      contributor license agreements.  See the NOTICE file distributed with 
 //      this work for additional information regarding copyright ownership.
@@ -20,8 +21,6 @@ using System;
 using Genesys.Extensions;
 using Genesys.Foundation.Entity;
 using System.Collections.Generic;
-using System.Linq;
-using Genesys.Foundation.Name;
 
 namespace Foundation.Entity
 {
@@ -90,7 +89,7 @@ namespace Foundation.Entity
                 case "lfm": return String.Format("{0}, {1} {2}", this.LastName, this.FirstName, this.MiddleName);
                 case "lfMI": return String.Format("{0}, {1} {2}.", this.LastName, this.FirstName, this.MiddleName.SubstringSafe(0, 1));
                 case "fMIl": return String.Format("{0} {1}. {2}", this.FirstName, this.MiddleName.SubstringSafe(0, 1), this.LastName);
-                case "fl": return String.Format("{0} {2}", this.FirstName, this.LastName);
+                case "fl": return String.Format("{0} {1}", this.FirstName, this.LastName);
                 case "fml":
                 case "G":
                 default: return String.Format("{0} {1} {2}", this.FirstName, this.MiddleName, this.LastName);

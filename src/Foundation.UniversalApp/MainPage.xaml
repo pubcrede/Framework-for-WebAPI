@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="Foundation.UniversalApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Foundation.UniversalApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Background="{StaticResource ContentBackgroundBrush}">
+            <TextBox Text="Your new Universal Mobile App + Reusable Framework powered by Genesys Source is ready!" Style="{StaticResource TextBoxSubTitle}" Margin="5,10,0,10" />
+            <TextBox Text="Step 1: Publish the Foundation.Database (SSDT) project to your SQL Server by:" Style="{StaticResource TextBoxSubTitle}" Margin="20,0,0,0" />
+            <StackPanel Margin="38,0,0,0">
+                <TextBox Text="I. Double-click Foundation.Database\Publish\PublishToDev.publish.xml to bring up the Publish form" Style="{StaticResource TextBoxBody}" />
+                <TextBox Text="II. Set your SQL connection by clicking the Edit button" Style="{StaticResource TextBoxBody}" />
+                <TextBox Text="III. Click Publish and SSDT will publish schema, SPs, views and data to your destination database" Style="{StaticResource TextBoxBody}" />
+            </StackPanel>
+            <TextBox Text="Step 2: Set the Foundation.Entity (EF) connection strings to your SQL Server by:" Style="{StaticResource TextBoxSubTitle}" Margin="20,0,0,0" />
+            <StackPanel Orientation="Vertical" Margin="38,0,0,0">
+                <TextBox Text="I. Open Foundation.UniversalApp\App_Data\ConnectionStrings.config" Style="{StaticResource TextBoxBody}" />
+                <TextBox Text="II. Change DatabaseServer.dev.GenesysFramework.com to your SQL Server machine name" Style="{StaticResource TextBoxBody}" />
+                <TextBox Text="III. For SQL Authentication, change Integrated Security=true to user id=USER; password=PASS;" Style="{StaticResource TextBoxBody}" />
+                <TextBox Text=" Important: Most problems are caused by invalid SQL Connection and/or User" Style="{StaticResource TextBoxBody}" />
+            </StackPanel>
+            <TextBox Text="Step 3: Run the Foundation.UniversalApp project!" Style="{StaticResource TextBoxSubTitle}" Margin="20,0,0,0" />
+            <StackPanel Margin="38,0,0,10">
+                <TextBox Text="I. Right-cick the Foundation.UniversalApp project and select Set as Startup Project" Style="{StaticResource TextBoxBody}" />
+                <TextBox Text="II. Press F5 to run" Style="{StaticResource TextBoxBody}" />
+                <TextBox Text="III. Click the Search link at the top, enter 'i' for First Name, and click Search to see records with 'i'" Style="{StaticResource TextBoxBody}" />
+            </StackPanel>
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="{StaticResource ContentBackgroundBrush}" Orientation="Vertical" Margin="0,10,5,0" Grid.Column="0">
+                <TextBox Text="What is Genesys Source?" Style="{StaticResource TextBoxSubTitle}" Margin="5,0,0,0" />
+                <TextBox Text="Genesys Source is a full-stack .NET solution with Data Tier, Middle Tier and Presentation Tier projects that centralize your business objects in one reusable solution.     " Style="{StaticResource TextBoxBody}" Margin="10,5,0,0" HorizontalAlignment="Left" MaxWidth="330" TextWrapping="Wrap" />
+                <TextBox Text="Your framework C# objects then can be used in any app type that you may need - in a web site, in a web service, in a mobile app and in the database." Style="{StaticResource TextBoxBody}" Margin="10,5,0,10" HorizontalAlignment="Left" MaxWidth="330" TextWrapping="Wrap" />
+            </StackPanel>
+            <StackPanel Background="{StaticResource ContentBackgroundBrush}" Orientation="Vertical" Margin="0,10,5,0" Grid.Column="1">
+                <TextBox Text="Other areas of interest:" Style="{StaticResource TextBoxSubTitle}" Margin="5,5,0,0" />
+                <TextBox Text="Visit us at: http://www.GenesysFramework.com" Style="{StaticResource TextBoxBody}" Margin="10,3,0,0" />
+                <TextBox Text="Genesys in Visual Studio: http://marketplace.visualstudio.com" Style="{StaticResource TextBoxBody}" Margin="10,3,0,0" />
+                <TextBox Text="Genesys on GitHub: http://www.github.com/GenesysSource" Style="{StaticResource TextBoxBody}" Margin="10,3,0,0" />
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</Page>

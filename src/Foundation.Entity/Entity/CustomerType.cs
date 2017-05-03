@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------
 // <copyright file="CustomerType.cs" company="Genesys Source">
+//      Copyright (c) 2017 Genesys Source. All rights reserved.
 //      Licensed to the Apache Software Foundation (ASF) under one or more 
 //      contributor license agreements.  See the NOTICE file distributed with 
 //      this work for additional information regarding copyright ownership.
@@ -56,7 +57,7 @@ namespace Foundation.Entity
         /// <returns>All records matching the passed name</returns>
         public static IQueryable<CustomerType> GetByName(string name)
         {
-            var reader = new EntityReader<CustomerType>();
+            var reader = ReadOnlyDatabase<CustomerType>.Construct();
             return reader.GetAll().Where(x => x.Name == name);            
         }
     }

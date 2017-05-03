@@ -27,6 +27,7 @@
     <NoWarn>6002</NoWarn>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,27 +47,27 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Extensions.Full, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.3.17.4.2\lib\net46\Genesys.Extensions.Full.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Full.3.17.4.706\lib\net46\Genesys.Extensions.Full.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Extensions.Universal, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.4.2\lib\portable-net451+win81+wpa81\Genesys.Extensions.Universal.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.4.706\lib\net46\Genesys.Extensions.Universal.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Extras.Full, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.3.17.4.2\lib\net46\Genesys.Extras.Full.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Full.3.17.4.706\lib\net46\Genesys.Extras.Full.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Extras.Universal, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.4.2\lib\portable-net451+win81+wpa81\Genesys.Extras.Universal.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Universal.3.17.4.706\lib\net46\Genesys.Extras.Universal.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Foundation.Entity, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Foundation.Entity.3.17.4.2\lib\net46\Genesys.Foundation.Entity.dll</HintPath>
+      <HintPath>..\packages\Genesys.Foundation.Entity.3.17.4.706\lib\net46\Genesys.Foundation.Entity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Genesys.Foundation.Interfaces, Version=3.17.4.0, Culture=neutral, PublicKeyToken=e9c26097b5145304, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Foundation.Interfaces.3.17.4.2\lib\net46\Genesys.Foundation.Interfaces.dll</HintPath>
+      <HintPath>..\packages\Genesys.Foundation.Interfaces.3.17.4.706\lib\net46\Genesys.Foundation.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

@@ -1,0 +1,25 @@
+﻿<Page x:Class="Genesys.Foundation.Themes.GenericLayout"
+x:Name="RootPage"
+xmlns:local="using:Genesys.Foundation.Themes"
+xmlns:uc="using:Genesys.Foundation.UserControls"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+        <uc:HeaderBar Text="Genesys Foundation for Universal and Xamarin" Grid.Row="0" />
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <uc:HamburgerMenu/>
+            <StackPanel Margin="0,10,0,0">
+                <Frame x:Name="Title" FontSize="22" Margin="50,10,0,0" />
+                <Frame x:Name="Body" Margin="50,10,0,0" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

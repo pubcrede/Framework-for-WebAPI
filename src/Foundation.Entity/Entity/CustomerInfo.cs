@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------
 // <copyright file="CustomerInfo.cs" company="Genesys Source">
+//      Copyright (c) 2017 Genesys Source. All rights reserved.
 //      Licensed to the Apache Software Foundation (ASF) under one or more 
 //      contributor license agreements.  See the NOTICE file distributed with 
 //      this work for additional information regarding copyright ownership.
@@ -51,7 +52,7 @@ namespace Foundation.Entity
         /// <returns></returns>
         public static IQueryable<CustomerInfo> GetByNameBirthdayKey(string firstName, string lastName, DateTime birthDate)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             IQueryable<CustomerInfo> returnValue = reader.GetAll()
                 .Where(x => (firstName != TypeExtension.DefaultString && x.FirstName == firstName)
                 && (lastName != TypeExtension.DefaultString && x.LastName == lastName)
@@ -65,9 +66,9 @@ namespace Foundation.Entity
         /// </summary>
         /// <param name="searchFields">ICustomer with data to search</param>
         /// <returns>All records matching the passed ICustomer</returns>
-        public static IQueryable<CustomerInfo> GetBySearchFields(ICustomer searchFields)
+        public static IQueryable<CustomerInfo> GetByAny(ICustomer searchFields)
         {
-            var reader = new EntityReader<CustomerInfo>();
+            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             IQueryable<CustomerInfo> returnValue = reader.GetAll()
                 .Where(x => (searchFields.FirstName != TypeExtension.DefaultString && x.FirstName.Contains(searchFields.FirstName))
                 || (searchFields.LastName != TypeExtension.DefaultString && x.LastName.Contains(searchFields.LastName))
