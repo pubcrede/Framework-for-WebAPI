@@ -12,6 +12,14 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# Visual Studio Extension (VSIX)
+*.vsix
+*.vstemplate
+_*.png
+
+# Strong Name
+*.snk
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

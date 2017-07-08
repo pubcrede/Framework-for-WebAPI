@@ -1,38 +1,57 @@
-# Genesys Source Framework Foundation for ASP.NET Web API
-Genesys Framework Foundation for ASP.NET Web API is a pre-setup full-stack .NET Solution to house your reusable business objects, such as CustomerInfo. 
-Works with your existing SQL tables, and allows you to incrementally upgrade your custom software app...one page at a time.
+# Genesys Source Framework for ASP.NET Web API
+Genesys Source Framework for ASP.NET Web API is a pre-setup full-stack .NET Solution to house your reusable business objects, such as CustomerInfo.
+ Works with your existing SQL tables, and allows you to incrementally upgrade your custom software app...one page at a time.
 
-Namespaces:
-* Foundation.Entity: Your custom business-object entities.
-* Genesys.Foundation: Structure and functionality foundation to support your reusable framework. Classes such as CrudEntity, EntityReader and EntityWriter.
-* Genesys.Extensions: .NET Framework extension methods for null-safe, strongly-typed operations.
-* Genesys.Extras: .NET Framework-level classes for common tasks such as Http request/response, serialization, string manipulation, error logging, etc.
+Bringing reusability to your software stack without the cost and uncertainty.
 
 Projects:
-* Foundation.Database: SQL Server Data Tools (SSDT), T-SQL, SQL Server 2016, .NET 4.6 
-* Foundation.Entity: Entity Foundation 6.1.3, C#, .NET 4.6 
-* Foundation.Interfaces: Portable Class Library (Win, iOS, Android), C#, .NET 4.6, Profile 151 
-* Foundation.Models: Portable Class Library (Win, iOS, Android), C#, .NET 4.6, Profile 151 
-* Foundation.WebServices: Web API 5.2.3, C#, .NET 4.6 
+* Framework.WebServices: Web API 5.2.3, C#, .NET 4.6 
+* Framework.Models: Portable Class Library (Win, iOS, Android), C#, .NET 4.6, Profile 151 
+* Framework.Interfaces: Portable Class Library (Win, iOS, Android), C#, .NET 4.6, Profile 151 
+* Framework.DataAccess: Entity Framework 6.1.3, C#, .NET 4.6
+* Framework.Database: SQL Server Data Tools (SSDT), T-SQL, SQL Server 2016, .NET 4.6
 
-Bringing reusability to your code without the cost and uncertainty.
+Database:
+* SQL Express database included: App_Data\FrameworkData.mdf
+* SSDT publish to SQL Server dev environment: Framework.Database\Publish\PublishToDev.publish.xml
+* SSDT publish to SQL Express local file: Framework.Database\Publish\PublishToLocal.publish.xml
 
-Genesys Framework is currently in release preview, for more information visit genesysframework.com.
+Genesys Source Namespaces:
+* Genesys.Framework: Structure and functionality Framework to support your reusable entities. Classes such as CrudEntity, EntityReader and EntityWriter.
+* Genesys.Extensions: .NET Framework extension methods for null-safe, strongly-typed operations. Cross-platform, open-source common library for .NET (Full) and .NET Core (Universal, Portable).
+* Genesys.Extras: .NET Framework-level classes for common tasks such as Http request/response, serialization, string manipulation, error logging, etc. Cross-platform, open-source common library.
 
 ### Reference Site and Documentation
-Genesys Source Framework documentation is available at [GenesysFramework.com](http://www.GenesysFramework.com):
-Genesys Framework Foundation...
-* [Genesys Source Framework Quick-Guide](http://docs.genesysframework.com/library/Genesys-Foundation-Quick-Guide.pdf)
-* [Genesys Source Framework Requirements](http://docs.genesysframework.com/library/Genesys-Foundation-Requirements.pdf)
-* [Genesys Source Framework Reference](http://docs.genesysframework.com/reference/Genesys-Foundation-Foundation)
-Genesys Framework Extensions...
-* [Genesys Framework Extensions Reference ](http://docs.genesysframework.com/reference/Genesys-Framework-Extensions-full)
-Genesys Framework Overview...
-* [GetFramework.com](http://www.getframework.com/)
+Genesys Source Framework downloads and docs available at [GenesysFramework.com](http://www.GenesysFramework.com):
+Genesys Source Framework...
+* [Genesys Framework Overview](http://www.getframework.com/)
+* [Genesys Framework Quick-Guide](http://docs.genesyssource.com/library/Genesys-Framework/Genesys-Framework-Quick-Guide.pdf)
+* [Genesys Framework Requirements](http://docs.genesyssource.com/library/Genesys-Framework/Genesys-Framework-Requirements.pdf)
+* [Genesys Framework Reference](http://docs.genesyssource.com/reference/Genesys-Framework)
+Genesys Soruce Extensions...
+* [Genesys Extensions Reference ](http://docs.genesyssource.com/reference/Genesys-Extensions)
 
 ### Dev Environment and Compiling
-Please use VisualStudio 2015 and build using the IDE or MSBuild.exe.
+Please use the latest Visual Studio and build using the IDE or MSBuild.exe. Our CICD processes default to the latest Visual Studio and MSBuild versions.
+
+### Database Environment and Publishing
+Please use the latest SQL Server and/or SQL Expresss and publish using the SSDT project Framework.Database.
+- SSDT publish to SQL Server dev environment: Framework.Database\Publish\PublishToDev.publish.xml
+- SSDT publish to SQL Express local file: Framework.Database\Publish\PublishToLocal.publish.xml
+
+### Hosting
+- Cloud: Azure Web Server, Database Server and/or Virtual Machines.
+- On-Prem: Latest Windows Server, IIS, .NET 4.5, SQL Server.
+
+### Build and Release
+- VisualStudio.com repos set to TFVC. On-prem TFS server and build agent for local infrastructure powershell deployments.
+- Local NuGet feed for development cycles.
+- Sprints pushed to GitHub on or about the 7th of each month.
+
+### Distribution
+Please use ClickOnce Deployments to distribute your app with a Url
+* [ClickOnce Deployment](http://bit.ly/2tqrDIk)
 
 ### Git Repo
-- [https://github.com/GenesysSource/Foundation-for-WebAPI.git](https://github.com/GenesysSource/Foundation-for-WebAPI.git)
-- `git clone git@github.com:GenesysSource/Foundation-for-WebAPI.git`
+- [https://github.com/GenesysSource/Framework-for-WebAPI.git](https://github.com/GenesysSource/Framework-for-WebAPI.git)
+- `git clone git@github.com:GenesysSource/Framework-for-WebAPI.git`
