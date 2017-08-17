@@ -1,0 +1,53 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top nav-bar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-left">
+                <div class="row logo-container">
+                    <a href="~/">
+                        <span class="logo-company logo-text-company"></span><span class="logo-company logo-text-source"></span>
+                        <p class="logo-product logo-text-product"></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="~/@(CustomerSearchController.ControllerName)/@(CustomerSearchController.SearchAction)" alt="@(CustomerSearchController.SearchAction)" data-toggle="collapse" data-target=".in">
+                        <div class="hidden-md hidden-sm">@(CustomerSearchController.SearchText)<b class="caret"></b></div>
+                        <span class="glyphicon glyphicon-search visible-md visible-sm"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/@(CustomerController.ControllerName)/@(CustomerController.CreateAction)" alt="@(CustomerController.CreateAction)" data-toggle="collapse" data-target=".in">
+                        <div class="hidden-md hidden-sm">@(CustomerController.CreateText)<b class="caret"></b></div>
+                        <span class="glyphicon glyphicon-plus-sign visible-md visible-sm"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://docs.GenesysFramework.com" alt="Docs" target="_blank" data-toggle="collapse" data-target=".in">
+                        <div class="hidden-md hidden-sm">Docs<b class="caret"></b></div>
+                        <span class="glyphicon glyphicon-search visible-md visible-sm"></span>
+                    </a>
+                </li>
+                <li class="header-tile blue-background">
+                    <a href="http://www.genesysframework.com/genesys-Framework" target="_blank" alt="Genesys Framework" data-toggle="collapse" data-target=".in">
+                        <div class="glyphicon glyphicon-home"></div>
+                        <p>Genesys Framework</p>
+                    </a>
+                </li>
+                <li class="header-tile green-background">
+                    <a href="http://www.genesysenvironments.com/cloud-dev-environment" target="_blank" alt="Genesys Cloud Dev Environment" data-toggle="collapse" data-target=".in">
+                        <span class="glyphicon glyphicon-cloud"></span>
+                        <p>Cloud Dev Environment</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

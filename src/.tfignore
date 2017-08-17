@@ -1,0 +1,32 @@
+##############################################
+# .tfignore
+##############################################
+# Ignore the NuGet packages folder in the root of the repository.
+# If needed, prefix 'packages' with additional folder names if it's 
+# not in the same folder as .tfignore.
+packages
+
+# include package target files which may be required for msbuild,
+# again prefixing the folder name as needed.
+!packages/*.targets
+
+# Ignore .jfm SSDT Temp file
+*.jfm
+
+##############################################
+### Examples
+##############################################
+# Ignore .cpp files in the ProjA sub-folder and all its subfolders
+ProjA\*.cpp
+# 
+# Ignore .txt files in this folder 
+#\*.txt
+#
+# Ignore .xml files in this folder and all its sub-folders
+#*.xml
+#
+# Ignore all files in the Temp sub-folder
+#\Temp
+#
+# Do not ignore .dll files in this folder nor in any of its sub-folders
+#!*.dll

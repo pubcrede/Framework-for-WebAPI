@@ -1,0 +1,355 @@
+﻿/* 
+* Responsive snaps
+*/
+@media (min-width: 1200px) {
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+}
+
+@media (max-width: 479px) {
+}
+
+/* 
+* Standard
+*/
+body {
+    background: white;
+    font-family: 'Segoe UI';
+}
+
+footer {
+    margin: 0.625em 1.25em 0.625em 1.25em;
+}
+
+input,
+select,
+textarea {
+    max-width: 20.6em;
+}
+
+img {
+    max-width: 100%;
+}
+
+p, li {
+    font-size: 1.1em;
+}
+
+a {
+    font-size: 1.05em;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/*
+* Bootstrap extensions
+*/
+.body-content {
+    padding: 6em 0em 0em 0em;
+    min-height: 25em;
+    background-color: white;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.button-dark {
+    background-color: slateblue;
+    color: white;
+}
+
+.button-light {
+    background-color: white;
+    color: slateblue;
+}
+
+
+/*
+* Navbar
+*/
+.navbar {
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+}
+
+    .navbar > .container {
+        padding-right: 2.2em;
+    }
+
+    .navbar a {
+        text-decoration: none;
+    }
+
+.navbar-toggle {
+    border-color: white !important;
+    background-color: lightgray;
+}
+
+.navbar-collapse {
+    border: none;
+}
+
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus,
+.navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
+    background-color: transparent;
+}
+
+/*
+* Misc
+*/
+.text-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 40%;
+}
+
+.grid-header {
+    background-color: white;
+}
+
+.border-none {
+    border: 0 !important;
+}
+
+.margin-none {
+    margin: 0em !important;
+}
+
+.padding-none {
+    padding: 0em !important;
+}
+
+.padding-sm {
+    padding: 1em !important;
+}
+
+.padding-md {
+    padding: 2em !important;
+}
+
+/* 
+* Header Logo
+*/
+.logo-container {
+    height: 4.5em;
+    width: 24em;
+    text-align: center;
+}
+
+.logo-text-company:before {
+    content: "CompanyName";
+}
+
+.logo-text-product:before {
+    content: "ProductName";
+}
+
+
+.logo-company {
+    font-family: 'Segoe UI';
+    font-variant: small-caps;
+    font-size: 2em;
+    color: firebrick;
+    font-weight: 400;
+}
+
+.logo-product {
+    font-family: 'Segoe UI';
+    font-variant: small-caps;
+    font-size: 1.25em;
+    color: gray;
+    font-weight: 400;
+    margin-top: -0.75em;
+}
+
+/*
+* Header Tiles
+*/
+.header-tile {
+    font-family: 'Segoe UI';
+    width: 5.3em;
+    height: 5.3em;
+    text-align: center;
+}
+
+    .header-tile a {
+        text-decoration: none;
+        padding: 0 !important;
+    }
+
+    .header-tile .glyphicon {
+        color: white;
+        font-size: 3em;
+    }
+
+    .header-tile p {
+        color: white;
+        font-weight: 400;
+        font-size: 0.65em;
+        line-height: 0.75em;
+    }
+
+/* 
+* Color Palette
+*/
+.blue {
+    color: royalblue;
+}
+
+.gray {
+    color: gray;
+}
+
+.green {
+    color: forestgreen;
+}
+
+.blue-background {
+    background-color: royalblue;
+}
+
+.gray-background {
+    background-color: gray;
+}
+
+.green-background {
+    background-color: forestgreen;
+}
+
+/* 
+* Glyphicon sizes
+*/
+.glyphicon-character-xs {
+    font-size: 9pt;
+}
+
+.glyphicon-character-sm {
+    font-size: 14pt;
+}
+
+.glyphicon-character-md {
+    font-size: 22pt;
+}
+
+.glyphicon-character-lg {
+    font-size: 36pt;
+}
+
+.glyphicon-character-xl {
+    font-size: 62pt;
+}
+
+.glyphicon-link {
+    font-size: 1.1em;
+}
+
+/* 
+* Common
+*/
+.hr-sm {
+    border-color: lightgray;
+    width: 30%;
+}
+
+/*
+* Form
+*/
+.form-horizontal {
+    display: table;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: auto;
+}
+
+.control-label {
+    color: slategray;
+}
+
+/*
+* Section
+*/
+.section-header {
+    color: slategray;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.section-buttons {
+    text-align: right;
+    padding-right: 1.1em;
+}
+
+
+.section-contents {
+    padding: 5em 2.5em 5em 2.5em;
+    min-height: 40em;
+}
+
+    .section-contents ul {
+        list-style: none;
+    }
+
+    .section-contents li:before {
+        content: "\21D2";
+        margin-left: -1.2em;
+        margin-right: 0.3em;
+    }
+
+    .section-contents li {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+    }
+
+    .section-contents .form-horizontal {        
+        text-align: center;
+    }
+
+/*
+* Contact
+*/
+.section-contact {
+    background-color: lightslategray;
+    color: white;
+    height:30em;
+}
+
+    .section-contact .section-header {
+        color: white;
+    }
+
+    .section-contact a {
+        color: white;
+        font-size: 1em;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+/*
+* Social
+*/
+.social {
+    padding-top: 1em;
+}
+
+/*
+* footer-links
+*/
+.footer-links {
+    font-size:1.1em;
+}
