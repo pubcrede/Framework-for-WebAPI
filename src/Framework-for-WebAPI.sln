@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
@@ -100,5 +100,7 @@ Global
 		{D99DBEA0-7E81-4557-BA85-EEDEB8BBA2BD} = {629630FC-06D3-473D-AEA9-85B33A2C978C}
 		{8E5A58BE-1354-45D9-BE27-B61592EC16F4} = {629630FC-06D3-473D-AEA9-85B33A2C978C}
 		{0AC46EC9-EC99-4BFA-8DA9-4D9E0E9CB039} = {EED42522-B85C-4818-8297-C837E27DF33E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
 	EndGlobalSection
 EndGlobal

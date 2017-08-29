@@ -1,12 +1,13 @@
-ECHO OFF
-REM Usage: Call "$(ProjectDir)PreBuild.$(ConfigurationName).bat" "$(ProjectDir)" "$(ConfigurationName)"
-REM Vars:  $(TargetPath) = output file, $(TargetDir) = full bin path , $(OutDir) = bin\debug, $(ConfigurationName) = "Debug"
-
 ECHO Starting PreBuild.bat
+REM Usage: Call "$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)"
+REM Vars:  $(TargetPath) = output file, $(TargetDir) = full bin path , $(OutDir) = bin\debug, $(ConfigurationName) = "Debug"
 
 REM Locals
 SET FullPath=%1
 SET FullPath=%FullPath:"=%
+SET ProductFolder="framework.test"
+
+ECHO ** PreBuild.bat **
 ECHO FullPath: %FullPath%
 SET Configuration=%2
 ECHO Configuration: %Configuration%
@@ -14,8 +15,8 @@ ECHO Configuration: %Configuration%
 if "%Configuration%"=="" SET Configuration="Release"
 
 REM \App_Data\*.mdf
-%WINDIR%\system32\attrib.exe "%FullPath%App_Data\*.mdf" -r
-%WINDIR%\system32\attrib.exe "%FullPath%App_Data\*.ldf" -r
+%WINDIR%\system32\attrib.exe "%FullPath%*.mdf" -r /s
+%WINDIR%\system32\attrib.exe "%FullPath%*.ldf" -r /s
 
 REM \App_Data\AppSettings.config
 %WINDIR%\system32\attrib.exe "%FullPath%App_Data\AppSettings.config" -r

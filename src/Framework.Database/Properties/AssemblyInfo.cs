@@ -28,7 +28,7 @@ using System.Reflection;
 [assembly: AssemblyCompany("Genesys Source")]
 [assembly: AssemblyProduct("Genesys Source Framework Database")]
 [assembly: AssemblyCopyright("Copyright © 2017 Genesys Source. All rights reserved.")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Genesys Source is a registered trademark of Genesys Source. Genesys Source Framework and Genesys Cloud Dev Environment are trademarks of Geneysys Source.")]
 [assembly: AssemblyCulture("")]
 
 // Version information for an assembly consists of the following four values:
@@ -38,5 +38,5 @@ using System.Reflection;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("3.17.07")]
-[assembly: AssemblyFileVersion("3.17.07")]
+[assembly: AssemblyVersion("3.17.08")]
+[assembly: AssemblyFileVersion("3.17.08")]

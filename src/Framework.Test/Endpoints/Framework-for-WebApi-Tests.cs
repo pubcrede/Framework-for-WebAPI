@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------
 // <copyright file="CustomerCloudTests.cs" company="Genesys Source">
 //      Licensed to the Apache Software Foundation (ASF) under one or more 
 //      contributor license agreements.  See the NOTICE file distributed with 
@@ -133,14 +133,14 @@ namespace Framework.Tests
         }
 
         /// <summary>
-        /// Delete a customer from the cloud
+        /// Get a customer from the cloud
         /// </summary>
         /// <remarks></remarks>
         [TestMethod()]
         public async Task Endpoints_Framework_WebAPI_CustomerSearchGet()
         {
             var url = new ConfigurationManagerFull().AppSettingValue("MyWebService");
-            var request = new HttpRequestGet<CustomerSearchModel>(url + "/CustomerSearch/-1?firstName=i&lastName=");
+            var request = new HttpRequestGet<CustomerSearchModel>(url + "/CustomerSearch/-1/i/x/");
             var returnValue = await request.SendAsync();
             Assert.IsTrue(request.Response.IsSuccessStatusCode, request.Response.ReasonPhrase);
             Assert.IsTrue(returnValue.Results.Count > 0);
