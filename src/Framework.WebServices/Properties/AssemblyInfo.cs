@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Genesys Source")]
 [assembly: AssemblyProduct("Genesys Source Framework for Web API")]
 [assembly: AssemblyCopyright("Copyright © 2017 Genesys Source. All rights reserved.")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Genesys Source is a registered trademark of Genesys Source. Genesys Source Framework and Genesys Cloud Dev Environment are trademarks of Geneysys Source.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -39,5 +39,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("3.17.07")]
-[assembly: AssemblyFileVersion("3.17.07")]
+[assembly: AssemblyVersion("3.17.08")]
+[assembly: AssemblyFileVersion("3.17.08")]
