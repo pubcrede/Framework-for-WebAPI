@@ -185,8 +185,11 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
+#   except App_Data, which contains pre-built MDF SQL Server Express files
 *.mdf
+!**/App_Data/*.mdf
 *.ldf
+!**/App_Data/*.ldf
 
 # Business Intelligence projects
 *.rdl.data
