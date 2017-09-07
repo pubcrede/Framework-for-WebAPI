@@ -158,7 +158,6 @@ a {
     content: "ProductName";
 }
 
-
 .logo-company {
     font-family: 'Segoe UI';
     font-variant: small-caps;
@@ -255,6 +254,13 @@ a {
 
 .glyphicon-link {
     font-size: 1.1em;
+}
+
+/* 
+* Glyphicon
+*/
+.glyphicon-house:before {
+    content: "\2302";
 }
 
 /* 
