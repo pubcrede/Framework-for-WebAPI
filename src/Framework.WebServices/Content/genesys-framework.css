@@ -151,11 +151,11 @@ a {
 }
 
 .logo-text-company:before {
-    content: "CompanyName";
+    content: "Genesys Source";
 }
 
 .logo-text-product:before {
-    content: "ProductName";
+    content: "Framework";
 }
 
 .logo-company {
@@ -175,58 +175,117 @@ a {
     margin-top: -0.75em;
 }
 
-/*
-* Header Tiles
+/* 
+* Glyphicon
 */
-.header-tile {
+.glyphicon-framework, .glyphicon-environments {
+    color: #FFFFFF !important;
+    font-size: 4.5em;
+    line-height: 0.35;
+}
+
+    .glyphicon-framework:before {
+        content: "\2302";
+    }
+
+    .glyphicon-environments:before {
+        content: "\2601";
+    }
+
+/*
+* Genesys Tiles
+*/
+.genesys-tile {
     font-family: 'Segoe UI';
     width: 5.3em;
     height: 5.3em;
     text-align: center;
 }
 
-    .header-tile a {
+    .genesys-tile a {
         text-decoration: none;
-        padding: 0 !important;
+        padding: 5px 0px 0px 0px !important;
     }
 
-    .header-tile .glyphicon {
-        color: white;
-        font-size: 3em;
+    .genesys-tile .glyphicon {
+        color: #FFFFFF;
+        font-size: 3.5em;
     }
 
-    .header-tile p {
-        color: white;
+    .genesys-tile p {
+        color: #FFFFFF;
         font-weight: 400;
-        font-size: 0.65em;
-        line-height: 0.75em;
+        font-size: 0.8em;
+        line-height: 0.85em;
+        margin: 0;
+        padding: 0;
+        text-align: center;
     }
 
 /* 
-* Color Palette
+* Genesys Logo Color Palette
 */
-.blue {
-    color: royalblue;
+.genesys-blue {
+    color: #0c60c6;
 }
 
-.gray {
-    color: gray;
+.genesys-gray {
+    color: #5a5a5a;
 }
 
-.green {
-    color: forestgreen;
+.genesys-green {
+    color: #73BE3D;
 }
 
-.blue-background {
-    background-color: royalblue;
+.genesys-purple {
+    color: #7030A0;
 }
 
-.gray-background {
-    background-color: gray;
+.genesys-orange {
+    color: #de6a1d;
 }
 
-.green-background {
-    background-color: forestgreen;
+.genesys-blue-background {
+    background-color: #0c60c6;
+}
+
+.genesys-gray-background {
+    background-color: #5a5a5a;
+}
+
+.genesys-green-background {
+    background-color: #73BE3D;
+}
+
+.genesys-purple-background {
+    background-color: #7030A0;
+}
+
+.genesys-orange-background {
+    background-color: #de6a1d;
+}
+
+/* 
+* Genesys Site Color Palette
+*/
+.genesys-site-slate {
+    background-color: #778899;
+}
+
+.genesys-site-medium {
+    background-color: #A8B3BD;
+}
+
+.genesys-site-offwhite {
+    background-color: #F7F9FA;
+}
+
+.genesys-site-blue {
+    background-color: #408AD1;
+}
+
+.genesys-site-royal {
+    background-color: #032bad;
 }
 
 /* 
@@ -254,13 +313,6 @@ a {
 
 .glyphicon-link {
     font-size: 1.1em;
-}
-
-/* 
-* Glyphicon
-*/
-.glyphicon-house:before {
-    content: "\2302";
 }
 
 /* 
@@ -322,7 +374,7 @@ a {
         padding-bottom: 0.2em;
     }
 
-    .section-contents .form-horizontal {        
+    .section-contents .form-horizontal {
         text-align: center;
     }
 
@@ -332,7 +384,7 @@ a {
 .section-contact {
     background-color: lightslategray;
     color: white;
-    height:30em;
+    height: 30em;
 }
 
     .section-contact .section-header {
@@ -357,5 +409,5 @@ a {
 * footer-links
 */
 .footer-links {
-    font-size:1.1em;
+    font-size: 1.1em;
 }

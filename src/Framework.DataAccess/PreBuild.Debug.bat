@@ -1,6 +1,6 @@
 ECHO Starting PreBuild.bat
 REM Usage: Call "$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)"
-REM Vars:  $(TargetPath) = output file, $(TargetDir) = full bin path , $(OutDir) = bin\debug, $(ConfigurationName) = "Debug"
+REM Vars:  $(ProjectName) = MyCo.Framework. Models, $(TargetPath) = output file, $(TargetDir) = full bin path , $(OutDir) = bin\debug, $(ConfigurationName) = "Debug"
 
 REM Locals
 SET FullPath=%1
@@ -12,13 +12,13 @@ ECHO FullPath: %FullPath%
 SET Configuration=%2
 ECHO Configuration: %Configuration%
 
-if "%Configuration%"=="" SET Configuration="Release"
 
-ECHO Executing "%FullPath%EFPartial.ps1" -Parameter1 "%FullPath%"
 
-%WINDIR%\system32\attrib.exe "%FullPath%*.cs" -r
+ECHO Executing "%FullPath%\EFPartial.ps1" -Parameter1 "%FullPath%"
+
+%WINDIR%\system32\attrib.exe "%FullPath%\*.cs" -r
 %WINDIR%\SysWOW64\WindowsPowerShell\v1.0\Powershell.exe Set-ExecutionPolicy Bypass -Scope Process -Force
-%WINDIR%\SysWOW64\WindowsPowerShell\v1.0\Powershell.exe -File "%FullPath%EFPartial.ps1" -Parameter1 "%FullPath%"
-%WINDIR%\system32\attrib.exe "%FullPath%*.cs" +r
+%WINDIR%\SysWOW64\WindowsPowerShell\v1.0\Powershell.exe -File "%FullPath%\EFPartial.ps1" -Parameter1 "%FullPath%"
+%WINDIR%\system32\attrib.exe "%FullPath%\*.cs" +r
 
 exit 0

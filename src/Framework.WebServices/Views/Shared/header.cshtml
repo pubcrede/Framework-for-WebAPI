@@ -8,9 +8,9 @@
             </button>
             <div class="navbar-left">
                 <div class="row logo-container">
-                    <a href="~/">
-                        <span class="logo-company logo-text-company"></span><span class="logo-company logo-text-source"></span>
-                        <p class="logo-product logo-text-product"></p>
+                    <a href="/">
+                        <span class="logo-company">Genesys Source</span>
+                        <p class="logo-product">Framework for Web API</p>
                     </a>
                 </div>
             </div>
@@ -18,9 +18,15 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="http://dev-web-16:20871/v1/CustomerSearch/-1/i/x/" alt="Search (HttpGet)" data-toggle="collapse" data-target=".in">
-                        <div class="hidden-md hidden-sm text-default">Search (HttpGet)<b class="caret"></b></div>
+                    <a href="~/@(CustomerSearchController.ControllerName)/@(CustomerSearchController.GetAction)" alt="@(CustomerSearchController.GetAction)" data-toggle="collapse" data-target=".in">
+                        <div class="hidden-md hidden-sm">Search<b class="caret"></b></div>
                         <span class="glyphicon glyphicon-search visible-md visible-sm"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/@(CustomerController.ControllerName)/@(CustomerController.PutAction)" alt="@(CustomerController.PutAction)" data-toggle="collapse" data-target=".in">
+                        <div class="hidden-md hidden-sm">Create<b class="caret"></b></div>
+                        <span class="glyphicon glyphicon-plus-sign visible-md visible-sm"></span>
                     </a>
                 </li>
                 <li>
@@ -29,17 +35,29 @@
                         <span class="glyphicon glyphicon-search visible-md visible-sm"></span>
                     </a>
                 </li>
-                <li class="header-tile blue-background">
-                    <a href="http://www.genesysstack.com/genesys-Framework" target="_blank" alt="Genesys Framework" data-toggle="collapse" data-target=".in">
-                        <span class="glyphicon glyphicon-house"></span>
-                        <p>Genesys Framework</p>
-                    </a>
+                <li class="genesys-tile genesys-blue-background">
+                    <div class="row" style="height:70%;">
+                        <a href="http://www.genesysstack.com/genesys-framework" alt="" data-toggle="collapse" data-target=".in">
+                            <span class="glyphicon-framework"></span>
+                        </a>
+                    </div>
+                    <div class="row" style="height:30%;">
+                        <a href="http://www.genesysstack.com/genesys-framework" alt="" data-toggle="collapse" data-target=".in">
+                            <p>Genesys</p><p>Framework</p>
+                        </a>
+                    </div>
                 </li>
-                <li class="header-tile green-background">
-                    <a href="http://www.genesysenvironments.com/cloud-dev-environment" target="_blank" alt="Genesys Cloud Dev Environment" data-toggle="collapse" data-target=".in">
-                        <span class="glyphicon glyphicon-cloud"></span>
-                        <p>Cloud Dev Environment</p>
-                    </a>
+                <li class="genesys-tile genesys-green-background">
+                    <div class="row" style="height:70%;">
+                        <a href="http://www.genesysenvironments.com/cloud-dev-environment" alt="" data-toggle="collapse" data-target=".in">
+                            <span class="glyphicon glyphicon-cloud"></span>
+                        </a>
+                    </div>
+                    <div class="row" style="height:30%;">
+                        <a href="http://www.genesysenvironments.com/cloud-dev-environment" alt="" data-toggle="collapse" data-target=".in">
+                            <p>Cloud Dev</p><p>Environment</p>
+                        </a>
+                    </div>
                 </li>
             </ul>
         </div>

@@ -6,14 +6,14 @@ REM Common are: $(TargetPath) = output file, $(TargetDir) = full bin path , $(Ou
 
 REM Locals
 SET LibFolder=\lib\Genesys-Framework
-SET FullPath=%1%2
+SET FullPath=%1
 SET FullPath=%FullPath:"=%
-SET FullPath="%FullPath%.*"
+
 
 REM Copying project output to build location
 Echo Input: %FullPath% to %LibFolder%
 
 MD %LibFolder%
 %WINDIR%\system32\attrib.exe %LibFolder%\*.* -r /s
-%WINDIR%\system32\xcopy.exe %FullPath% %LibFolder%\*.* /f/s/e/r/c/y
+%WINDIR%\system32\xcopy.exe "%FullPath%\*.*" "%LibFolder%\*.*" /d/f/s/e/r/c/y
 exit 0
