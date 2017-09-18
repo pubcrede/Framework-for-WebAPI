@@ -25,7 +25,7 @@
     <script src="Scripts/jquery-3.1.1.js"></script>
     <script>
         $(function () {
-            var sourceUrl = "http://localhost:20871/v1/customer/36";
+            var sourceUrl = "http://localhost:30002/v1/customer/36";
 
             var getCurrentInfo = function () {
                 $.ajax(sourceUrl,
@@ -47,7 +47,7 @@
             };
 
             var register = function () {
-                var registrationUrl = "http://localhost:20871/api/Account/Register";
+                var registrationUrl = "http://localhost:30002/api/Account/Register";
                 var registrationData = $("#userSignup").serialize();
                 $.post(registrationUrl, registrationData).always(showCurrentInfo);
                 return false;
@@ -60,7 +60,7 @@
             };
 
             var signin = function () {
-                var tokenUrl = "http://localhost:20871/Token";
+                var tokenUrl = "http://localhost:30002/Token";
                 var loginData = $("#userSignin").serialize();
                 loginData = loginData + "&grant_type=password";
                 $.post(tokenUrl, loginData)

@@ -1,25 +1,23 @@
 ECHO OFF
-REM Usage: Call "$(ProjectDir)PostBuild.$(ConfigurationName).bat" "$(TargetDir)" "$(TargetName)" "$(ConfigurationName)"
-REM Vars:  $(TargetPath) = output file, $(TargetDir) = full bin path , $(OutDir) = bin\debug, $(ConfigurationName) = "Debug"
+REM Usage: Call "$(MSBuildProjectDirectory)\PostBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)\$(OutDir)" "$(ConfigurationName)" "$(ProjectName)"
+REM Vars:  $(ProjectName) = MyCo.Framework. Models, $(TargetPath) = output file, $(TargetDir) = full bin path , $(OutDir) = bin\debug, $(ConfigurationName) = "Debug"
 
 ECHO Starting PostBuild.bat
 
 REM Locals
-SET LibFolder=\lib\Genesys-Framework
-SET FullPath=%1%2
+SET FullPath=%1
 SET FullPath=%FullPath:"=%
-SET FullPath="%FullPath%.*"
-SET Configuration=%3
-if "%Configuration%"=="" SET Configuration="Debug"
+ECHO FullPath: %FullPath%
+SET Configuration=%2
 ECHO Configuration: %Configuration%
+SET ProjectName=%3
+ECHO ProjectName: %ProjectName%
+SET LibFolder="\lib\%ProjectName%\"
+ECHO LibFolder: %LibFolder%
 
-
-REM Additionally output to \lib folder
+REM Publish Output
 MD %LibFolder%
-%WINDIR%\system32\attrib.exe %LibFolder%\*.* -r /s
-%WINDIR%\system32\xcopy.exe %FullPath% %LibFolder%\*.* /f/s/e/r/c/y
-
-REM Enable if want to copy all related Genesys dependencies to \lib (even those not of this Solution) 
-REM %WINDIR%\system32\xcopy.exe "%PartialPath%Genesys.*" "%LibFolder%\*.*" /f/s/e/r/c/y
+%WINDIR%\system32\attrib.exe %LibFolder%*.* -r /s
+%WINDIR%\system32\xcopy.exe "%FullPath%\*.*" "%LibFolder%*.*" /d/f/s/e/r/c/y
 
 Exit 0
