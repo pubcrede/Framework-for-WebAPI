@@ -74,7 +74,6 @@ a {
     color: slateblue;
 }
 
-
 /*
 * Navbar
 */
@@ -90,6 +89,10 @@ a {
     .navbar a {
         text-decoration: none;
     }
+
+#nav li:hover a {
+    color: gray !important;
+}
 
 .navbar-toggle {
     border-color: white !important;
