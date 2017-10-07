@@ -19,11 +19,6 @@
 /* 
 * Standard
 */
-@font-face {
-    font-family: 'VANGUARD';
-    src: url('/fonts/vanguard.eot?') format('eot'), url('/fonts/vanguard.ttf') format('truetype');
-}
-
 body {
     background: #F7F9FA;
     font-family: 'Segoe UI';
@@ -60,27 +55,21 @@ a {
 * Bootstrap extensions
 */
 .body-content {
-    padding: 6em 0em 0em 0em;
-    min-height: 25em;
     background-color: #FFFFFF;
+    padding-right: 10%;
+    padding-left: 10%;
 }
 
 .dl-horizontal dt {
     white-space: normal;
 }
 
-.button-dark {
-    background-color: #408AD1;
-    color: #FFFFFF;
-}
-
-.button-light {
-    background-color: #FFFFFF;
-    color: #408AD1;
-}
-
 .jumbotron {
     background: #FFFFFF;
+}
+
+.carousel-inner {
+    overflow: hidden;
 }
 
 .carousel-indicators {
@@ -112,6 +101,10 @@ a {
     .navbar a {
         text-decoration: none;
     }
+
+.nav li:hover a {
+    color: lightgray !important;
+}
 
 .navbar-toggle {
     border-color: #F7F9FA !important;
@@ -147,12 +140,20 @@ a {
     border: 0 !important;
 }
 
+.border-strong {
+    border: 3px solid #0c60c6 !important;
+}
+
 .margin-none {
     margin: 0em !important;
 }
 
 .padding-none {
     padding: 0em !important;
+}
+
+.padding-xs {
+    padding: .15em !important;
 }
 
 .padding-sm {
@@ -207,6 +208,54 @@ a {
     height: 10%;
 }
 
+.column-90 {
+    width: 90%;
+}
+
+.column-80 {
+    width: 80%;
+}
+
+.column-75 {
+    width: 75%;
+}
+
+.column-70 {
+    width: 70%;
+}
+
+.column-60 {
+    width: 60%;
+}
+
+.column-50 {
+    width: 50%;
+}
+
+.column-40 {
+    width: 40%;
+}
+
+.column-30 {
+    width: 30%;
+}
+
+.column-25 {
+    width: 25%;
+}
+
+.column-20 {
+    width: 20%;
+}
+
+.column-15 {
+    width: 15%;
+}
+
+.column-10 {
+    width: 10%;
+}
+
 /* 
 * Genesys Logo
 */
@@ -216,52 +265,45 @@ a {
     text-align: center;
 }
 
-.genesys-text-genesys:before {
-    content: "GENESYS";
-}
-
-.genesys-text-source:before {
-    content: "SOURCE";
-    color: #5a5a5a;
-    font-weight: 700;
-}
-
-.genesys-text-framework:before {
-    content: "FRAMEWORK";
-}
-
-.genesys-text-entities:before {
-    content: "ENTITIES";
-}
-
-.genesys-text-environments:before {
-    content: "ENVIRONMENTS";
-}
-
-.genesys-text-cloud-dev-environment:before {
-    content: "CLOUD DEV ENVIRONMENT";
-    font-size: 1.0em;
-}
-
-.genesys-text-stack:before {
-    content: "APPKIT";
-}
-
-.genesys-logo-company {
-    font-family: 'VANGUARD';
-    font-variant: small-caps;
-    font-size: 2em;
-    color: #0c60c6;
-    font-weight: 400;
-}
-
-.genesys-logo-product {
+.genesys-logo-text {
     font-family: 'Segoe UI';
     font-variant: small-caps;
     font-size: 1.25em;
-    color: #0c60c6;
-    font-weight: 400;
     margin-top: -0.75em;
+    color: #0c60c6;
+}
+
+.genesys-logo-image, .genesys-logo-image-sm {
+    text-align: center;
+}
+
+.genesys-logo-image-sm {    
+    max-width: 14em;
+}
+
+/* 
+* Glyphicon
+*/
+.glyphicon-framework, .glyphicon-environments {
+    color: #FFFFFF;
+    font-size: 4.5em;
+    line-height: 0.35;
+}
+
+    .glyphicon-framework:before {
+        content: "\2302";
+    }
+
+    .glyphicon-environments:before {
+        content: "\2601";
+        color: red !important;
+    }
+
+/*
+* Typography
+*/
+.smallcaps {
+    font-variant: small-caps;
 }
 
 /*
@@ -276,64 +318,78 @@ a {
 
     .genesys-tile a {
         text-decoration: none;
-        padding: 0 !important;
+        padding: 5px 0px 0px 0px !important;
     }
 
     .genesys-tile .glyphicon {
         color: #FFFFFF;
-        font-size: 3em;
+        font-size: 3.5em;
     }
 
     .genesys-tile p {
         color: #FFFFFF;
         font-weight: 400;
-        font-size: 0.65em;
-        line-height: 0.75em;
+        font-size: 0.8em;
+        line-height: 0.85em;
+        margin: 0;
+        padding: 0;
+        text-align: center;
     }
 
 /* 
 * Genesys Logo Color Palette
 */
 .genesys-blue {
-    color: #0c60c6;
+    color: #0c60c6 !important;
 }
 
 .genesys-gray {
-    color: #5a5a5a;
+    color: #5a5a5a !important;
 }
 
 .genesys-green {
-    color: #73BE3D;
+    color: #73BE3D !important;
 }
 
 .genesys-purple {
-    color: #7030A0;
+    color: #7030A0 !important;
+}
+
+.genesys-red {
+    color: #B22222 !important;
 }
 
 .genesys-orange {
-    color: #de6a1d;
+    color: #de6a1d !important;
+}
+
+.genesys-white {
+    color: #ffffff !important;
 }
 
 .genesys-blue-background {
-    background-color: #0c60c6;
+    background-color: #0c60c6 !important;
 }
 
 .genesys-gray-background {
-    background-color: #5a5a5a;
+    background-color: #5a5a5a !important;
 }
 
 .genesys-green-background {
-    background-color: #73BE3D;
+    background-color: #73BE3D !important;
 }
 
 .genesys-purple-background {
-    background-color: #7030A0;
+    background-color: #7030A0 !important;
 }
 
 .genesys-orange-background {
-    background-color: #de6a1d;
+    background-color: #de6a1d !important;
 }
 
+.genesys-offwhite-background {
+    background-color: #f5eeee !important;
+}
 /* 
 * Genesys Site Color Palette
 */
@@ -358,38 +414,35 @@ a {
 }
 
 /* 
-* Glyphicon sizes
-*/
-.glyphicon-character-xs {
-    font-size: 9pt;
-}
-
-.glyphicon-character-sm {
-    font-size: 14pt;
-}
-
-.glyphicon-character-md {
-    font-size: 22pt;
-}
-
-.glyphicon-character-lg {
-    font-size: 36pt;
-}
-
-.glyphicon-character-xl {
-    font-size: 62pt;
-}
-
-.glyphicon-link {
-    font-size: 1.1em;
-}
-
-/* 
 * Common
 */
 .hr-sm {
     border-color: #A8B3BD;
     width: 30%;
+}
+
+.text-xs {
+    font-size: 9pt;
+}
+
+.text-sm {
+    font-size: 14pt;
+}
+
+.text-md {
+    font-size: 22pt;
+}
+
+.text-lg {
+    font-size: 36pt;
+}
+
+.text-xl {
+    font-size: 62pt;
+}
+
+.glyphicon-link {
+    font-size: 1.1em;
 }
 
 /*
@@ -405,9 +458,51 @@ a {
 .control-label {
     color: #778899;
 }
+/*
+* sections: dark and light
+*/
+.section-dark, .section-light {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+    .section-dark a, .section-light a {
+        font-size: 1em;
+    }
+
+.section-dark {
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #408AD1;
+}
+
+    .section-dark h2 {
+        color: #FFFFFF;
+    }
+
+    .section-dark .section-header {
+        color: #FFFFFF;
+    }
+
+    .section-dark a {
+        color: #FFFFFF;
+    }
+
+.section-light {
+    font-weight: 500;
+    color: #408AD1;
+}
+
+    .section-light a {
+        color: #408AD1;
+    }
+
+.section-top{
+    padding-top:4em;
+}
 
 /*
-* Section
+* Section contents
 */
 .section-header {
     color: #778899;
@@ -422,11 +517,16 @@ a {
     padding-right: 1.1em;
 }
 
-
 .section-contents {
     padding: 5em 2.5em 5em 2.5em;
     min-height: 20em;
 }
+
+    .section-contents > table {
+        border-left: hidden;
+        border-right: hidden;
+        border-color: blue;
+    }
 
     .section-contents ul {
         list-style: none;
@@ -449,34 +549,12 @@ a {
     }
 
 /*
-* section-dark
-*/
-.section-dark {
-    font-weight: 500;
-    color: #FFFFFF;
-    background-color: #408AD1;
-}
-
-    .section-dark h2 {
-        color: #FFFFFF;
-    }
-
-    .section-dark .section-header {
-        color: #FFFFFF;
-    }
-
-/* 
- * section-light
-*/
-.section-light {
-    font-weight: 500;
-}
-
-/*
 * section-glyphicon-bar
 */
 .section-glyphicon-bar {
     background-color: #F7F9FA;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
     .section-glyphicon-bar > .section-contents {
@@ -508,34 +586,33 @@ a {
 * Hero 
 */
 .section-hero {
-    padding-top: 2.5em;
-}
-
-.hero-header {
-    margin: 0;
-    text-align: center;
-    font-variant: small-caps;
-    font-size: 20pt;
-    font-family: 'Segoe UI';
-}
-
-.hero-image {
-    width: 100%;
-    text-align: center;
-    z-index: -1;
-    padding-top: 3%;
-}
-
-.hero-body {
-    padding-top: 1em;
+    background-color: #FFFFFF;
     font-size: 1.1em;
-    padding-top: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-.hero-footer {
-    font-size: 1.1em;
-    pointer-events: all !important;
-}
+    .section-hero .hero-header {
+        padding-top: 2.5em;
+        text-align: center;
+        vertical-align: bottom;
+        font-variant: small-caps;
+        font-size: 20pt;
+        font-family: 'Segoe UI';
+    }
+
+    .section-hero .hero-image {
+        width: 100%;
+        z-index: -1;
+    }
+
+    .section-hero .hero-body {
+    }
+
+    .section-hero .hero-footer {
+        padding-bottom: 1em;
+        pointer-events: all !important;
+    }
 
 /*
 * tri-point
@@ -543,6 +620,8 @@ a {
 .section-tri-point {
     background-color: #778899;
     color: #FFFFFF;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
     .section-tri-point a {
@@ -580,6 +659,8 @@ a {
     padding-top: 3em;
     padding-bottom: 3em;
     background-color: #F7F9FA;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
     .section-download a {
@@ -595,6 +676,8 @@ a {
     padding-top: 3em;
     padding-bottom: 3em;
     background-color: #F7F9FA;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
     .section-see-us-on a {
@@ -610,6 +693,8 @@ a {
     text-align: center;
     padding-bottom: 4em;
     background-color: #F7F9FA;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 /*
@@ -618,6 +703,8 @@ a {
 .section-commitment {
     background-color: #778899;
     color: #FFFFFF;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
     .section-commitment a {
@@ -650,6 +737,8 @@ a {
 .section-contact {
     background-color: #A8B3BD;
     color: #FFFFFF;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
     .section-contact .section-header {
@@ -666,6 +755,9 @@ a {
 /*
 * Social
 */
-.social {
+.social, social-sm {
     padding-top: 1em;
+}
+.social-image-sm {
+    max-width: 2em;
 }

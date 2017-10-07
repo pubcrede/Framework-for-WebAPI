@@ -43,6 +43,7 @@ namespace Framework.WebServices
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                       "~/Content/genesys-source.css",
                        "~/Content/genesys-framework.css"));
         }
     }

@@ -22,7 +22,7 @@ namespace Framework.WebServices
     public class CustomerController : WebApiController
     {
         public const string ControllerName = "Customer";
-        public const string GetActionName = "Get Customer";
+        public const string GetActionText = "Get Customer";
         public const string GetAction = "Get";
         public const string PutAction = "Put";
         public const string PostAction = "Post";

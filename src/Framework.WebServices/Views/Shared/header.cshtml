@@ -19,14 +19,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="~/v1/@(CustomerSearchController.ControllerName)/-1/i/x/" alt="@(CustomerSearchController.GetAction)" data-toggle="collapse" data-target=".in">
-                        <div class="hidden-md hidden-sm">Search<b class="caret"></b></div>
+                        <div class="hidden-md hidden-sm">@(CustomerSearchController.GetActionText)<b class="caret"></b></div>
                         <span class="glyphicon glyphicon-search visible-md visible-sm"></span>
                     </a>
                 </li>
                 <li>
                     <a href="http://docs.GenesysSource.com" alt="Docs" target="_blank" data-toggle="collapse" data-target=".in">
                         <div class="hidden-md hidden-sm">Docs<b class="caret"></b></div>
-                        <span class="glyphicon glyphicon-open-file visible-md visible-sm"></span>
+                        <span class="glyphicon glyphicon-question-sign visible-md visible-sm"></span>
                     </a>
                 </li>
                 <li class="genesys-tile genesys-blue-background">

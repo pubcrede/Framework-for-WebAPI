@@ -244,6 +244,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\genesys-framework.css" />
+    <Content Include="Content\genesys-source.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -295,6 +296,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="images\genesys\Map-of-the-Genesys-Source-Framework.png" />
+    <Content Include="images\social\social-facebook.png" />
+    <Content Include="images\social\social-rss.png" />
+    <Content Include="images\social\social-twitter.png" />
     <Content Include="packages.config" />
     <Content Include="App_Data\AppSettings.Release.config" />
     <Content Include="App_Data\ConnectionStrings.Debug.config">
