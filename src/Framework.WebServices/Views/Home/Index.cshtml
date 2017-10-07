@@ -2,52 +2,40 @@
     ViewBag.Title = "Your Web API Service powered by Genesys Source";
 }
 
-<div class="section-contents padding-md">
-    <h2>Welcome to your Web API service!</h2>
-    <p class="lead">Your new Web API Service + Reusable Framework is ready!</p>
-    <blockquote>
-        <p><strong>Step 1:</strong> Publish the Framework.Database (SSDT) project to your SQL Server by:</p>
-        <ul>
-            <li>Double-click Framework.Database\Publish\<strong>PublishToDev.publish.xml</strong> to bring up the Publish form</li>
-            <li>Set your SQL connection by clicking the <strong>Edit</strong> button</li>
-            <li>Click <strong>Publish</strong> and SSDT will publish schema, SPs, views and data to your destination database</li>
-        </ul>
-        <p><strong>Step 2:</strong> Set the Framework.Entity (EF) connection strings to your SQL Server by::</p>
-        <ul>
-            <li>Open Framework.WebApp\App_Data\<strong>ConnectionStrings.config</strong></li>
-            <li>Change DatabaseServer.dev.GenesysSource.com to your SQL Server machine name</li>
-            <li>For SQL Authentication, replace "Integrated Security=true" with "user id=USER; password=PASS;"</li>
-        </ul>
-        <p><strong>Step 3:</strong> Run the Framework.WebApp project!</p>
-        <ul>
-            <li>Right-click the <strong>Framework.WebApp</strong> project and select <strong>Set as Startup Project</strong></li>
-            <li>Press <strong>F5</strong> to run</li>
-            <li>Click the <strong>Search</strong> link at the top, enter "i" for First Name, and click Search to see records with "i"</li>
-        </ul>
-    </blockquote>
-    <p><a href="http://docs.GenesysSource.com/library/Genesys-Framework/Genesys-Framework-Quick-Guide.pdf" class="btn btn-primary btn-lg">View Framework Quick-Start Guide &raquo;</a></p>
+<div class="section-contents section-top">
+    <h2>Welcome to your Web API Service!</h2>
+    <img src="~/images/genesys/Map-of-the-Genesys-Source-Framework.png" alt="Your Genesys Source Framework" class="text-center" />
+    <p class="lead">Your new Web API Service projects are ready...</p>
+    <ul>
+        <li><strong>Framework.WebService: </strong>Web API Service project. Quick-Start Web API web service that creates, reads, updates and deletes objects using CRUD-to-SQL to the FrameworkData database.</li>
+        <li><strong>Framework.Models: </strong>Cross-Platform View Models project. Contains the Framework-level view models for http transport and .Serialize() built-in.</li>
+        <li><strong>Framework.Interfaces: </strong>Cross-Platform Interface project. All projects reference this project so that interfaces are enforced in all tiers, and on mobile device as well.</li>
+        <li><strong>Framework.DataAccess: </strong>Entity Framework (EF)/Data Access Object (DAO) project. Contains EF EDMX (database first), Data Access Objects, CRUDEntity, ModelEntity, EntityReader and EntityWriter.</li>
+        <li><strong>Framework.Database: </strong>SQL Server Data Tools (SSDT) project. Contains view/SP layer for the Framework.DataAccess to consume.</li>
+    </ul>
+    <p><small><strong>Important:</strong> Check <strong>\App_Data\AppSettings.config</strong> and <strong>\App_Data\ConnectionStrings.config</strong> for current configuration settings.</small></p>
+    <p class="text-center"><a href="http://docs.genesyssource.com/products/Genesys-Framework/Start-your-Genesys-Source-Framework.pdf" target="_blank" class="btn btn-primary btn-lg">View Framework Quick-Start Guide &raquo;</a></p>
     <div class="row">
         <div class="col-md-6">
             <h3>What is the Genesys Framework?</h3>
-            <p>Genesys Source Framework is a open-source, full-stack, cross-platform .NET solution that...</p>
+            <h4>Genesys Framework is a business object reusability .NET project, quick-start w/ ready-to-run plumbing</h4>
             <ul>
-                <li>Eliminates the setup time on your next .NET project</li>
-                <li>Centralizes your business objects in one reusable solution</li>
-                <li>Allows your objects to be consumed by MVC, Web API, WPF, UWP, iOS, Android and more!</li>
+                <li>Eliminates plumbing time on your .NET projects</li>
+                <li>Adds CRUD-to-SQL, CRUD-to-Services</li>
+                <li>Self-serializes, self-validates, self-tracks</li>
+                <li>Consumable by MVC, Web API, WPF, UWP, Xamarin</li>
             </ul>
-            <p class="text-center"><a class="btn btn-info btn-lg" href="http://docs.GenesysSource.com/library/Genesys-Framework/Genesys-Framework-Requirements.pdf">View Tech Requirements &raquo;</a></p>
         </div>
         <div class="col-md-6">
-            <h3>Other areas of interest:</h3>
+            <h3>Other areas of interest</h3>
             <ul>
-                <li>See the Framework project at: <a href="http://www.GenesysFramework.com">GenesysFramework.com</a></li>
-                <li>Genesys Framework Quick-Guide: <a href="http://docs.GenesysSource.com/library/Genesys-Framework/Genesys-Framework-Quick-Guide.pdf">docs.GenesysSource.com</a></li>
-                <li>Genesys on GitHub <a href="http://www.github.com/GenesysSource">github.com/GenesysSource</a></li>
-                <li>Genesys in Visual Studio <a href="https://marketplace.visualstudio.com/search?term=Genesys&target=VS&sortBy=Relevance">marketplace.visualstudio.com</a></li>
-                <li>Visit us at: <a href="http://www.GenesysSource.com">GenesysSource.com</a></li>
+                <li>Home: <a href="http://www.GenesysStack.com" target="_blank">genesysstack.com</a></li>
+                <li>Docs: <a href="http://docs.genesyssource.com" target="_blank">docs.genesyssource.com</a></li>
+                <li>Help: <a href="http://help.genesyssource.com" target="_blank">help.genesyssource.com</a></li>
+                <li>In Visual Studio: <a href="https://marketplace.visualstudio.com/search?term=Genesys&target=VS&sortBy=Relevance" target="_blank">visualstudio.com</a></li>
+                <li>On GitHub: <a href="http://www.github.com/GenesysSource" target="_blank">github.com/genesyssource</a></li>
             </ul>
-            <br />
-            <p class="text-center"><a class="btn btn-info btn-lg" href="http://www.genesysstack.com">Learn more &raquo;</a></p>
         </div>
     </div>
+    <p class="text-center"><a class="btn btn-primary btn-lg" href="http://docs.genesyssource.com/products/Genesys-Framework/What-is-the-Genesys-Source-Framework.pdf" target="_blank">View Tech Requirements &raquo;</a></p>
 </div>

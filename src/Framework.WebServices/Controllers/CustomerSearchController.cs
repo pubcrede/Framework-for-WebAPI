@@ -22,7 +22,7 @@ namespace Framework.WebServices
     public class CustomerSearchController : WebApiController
     {
         public const string ControllerName = "CustomerSearch";
-        public const string GetActionName = "Search";
+        public const string GetActionText = "Search";
         public const string GetAction = "Get";
         public const string PostAction = "Post";        
         public const string SearchRoute = "v1/" + CustomerSearchController.ControllerName + "/{id}/{firstName}/{lastName}";
